@@ -18,6 +18,7 @@
   --green-deep: #04362A;
   --green-soft: #0B5C48;
   --green-tint: #E6EFEB;
+  --green-gradient: linear-gradient(120deg, #071F18 0%, #145C3D 50%, #35A66A 100%);
   --gold: #CC9722;
   --gold-dark: #B3831A;
   --white: #FFFFFF;
@@ -69,7 +70,8 @@ ul { padding-left: 0; }
 .container-b { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
 /* ---------- Surfaces ---------- */
-.bg-green { background-color: var(--green); color: rgba(255, 255, 255, 0.84); }
+.bg-green { background-color: var(--green); background-image: var(--green-gradient); color: rgba(255, 255, 255, 0.84); }
+.bg-green > .section, .bg-green > .hero, .bg-green > .why { background: transparent; }
 .bg-green-deep { background-color: var(--green-deep); color: rgba(255, 255, 255, 0.84); }
 .bg-soft { background-color: var(--soft); }
 .bg-white { background-color: var(--white); }
@@ -198,7 +200,7 @@ ul { padding-left: 0; }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.18); } }
 
 /* ---------- Why strip (Autozen why-boxes) ---------- */
-.why { border-top: 1px solid var(--line-on-green); border-bottom: 1px solid var(--line-on-green); }
+.why { border-top: 1px solid rgba(255,255,255,0.18); border-bottom: 1px solid rgba(255,255,255,0.18); }
 .why .row { margin: 0; }
 .why-box { border-right: 1px solid var(--line-on-green); height: 100%; }
 .why .col-12:last-child .why-box { border-right: 0; }
