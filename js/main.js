@@ -78,5 +78,19 @@
     } else {
       counters.forEach(function (c) { c.textContent = c.dataset.count; });
     }
+
+    // Map facade: the Google Maps embed is only fetched on request
+    var loadMap = document.getElementById('loadMap');
+    if (loadMap) {
+      loadMap.addEventListener('click', function () {
+        var wrap = document.getElementById('mapWrap');
+        var iframe = document.createElement('iframe');
+        iframe.title = 'Map: Plot 25313, Mosi-oa-Tunya Road, Woodlands, Lusaka';
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.src = 'https://maps.google.com/maps?q=Mosi-oa-Tunya%20Road%2C%20Woodlands%2C%20Lusaka%2C%20Zambia&t=&z=15&ie=UTF8&iwloc=&output=embed';
+        wrap.innerHTML = '';
+        wrap.appendChild(iframe);
+      });
+    }
   });
 })(jQuery);
