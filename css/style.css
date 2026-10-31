@@ -175,7 +175,6 @@ ul { padding-left: 0; }
 /* =====================================================================
    HERO (Autozen: split heading + ghost title + Ken Burns carousel)
    ===================================================================== */
-.hero { padding: 96px 0 0; position: relative; overflow: hidden; }
 .hero .container-b { position: relative; z-index: 2; }
 .hero-kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 22px; }
 .hero-kicker .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
@@ -184,26 +183,11 @@ ul { padding-left: 0; }
 .hero-copy { color: rgba(255, 255, 255, 0.8); font-size: 1.12rem; max-width: 460px; }
 .hero-tagline { font-family: var(--font-head); color: var(--white); letter-spacing: 0.28em; text-transform: uppercase; font-size: 13px; font-weight: 700; }
 .hero-tagline .sep { color: var(--gold); margin: 0 10px; }
-.hero-ghost {
-  position: absolute; left: 0; right: 0; top: 150px; z-index: 1;
-  text-align: center; white-space: nowrap; pointer-events: none;
-  font-family: var(--font-head); font-weight: 800; font-size: clamp(90px, 16vw, 250px); line-height: 1;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09);
-  letter-spacing: -0.02em;
-}
 .hero .container-b { position: relative; z-index: 2; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line-on-green); }
 .hero-meta div { display: flex; align-items: center; gap: 12px; color: rgba(255, 255, 255, 0.82); font-size: 15px; }
 .hero-meta i { color: var(--gold); font-size: 20px; }
 
-.hero-visual { margin-top: 70px; position: relative; z-index: 2; }
-.kb-carousel { overflow: hidden; max-height: 620px; position: relative; }
-.kb-carousel .carousel-item img { width: 100%; height: 620px; object-fit: cover; animation: kenburns 18s linear infinite alternate; }
-.kb-carousel .carousel-item { transition: transform .6s ease-in-out, opacity .6s ease-in-out; }
-.kb-carousel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6, 76, 59, 0.55) 0%, rgba(6, 76, 59, 0) 35%, rgba(6, 76, 59, 0) 70%, rgba(6, 76, 59, 0.35) 100%); pointer-events: none; }
-.kb-carousel .carousel-indicators { margin-bottom: 22px; z-index: 3; }
-.kb-carousel .carousel-indicators [data-bs-target] { width: 34px; height: 3px; border: 0; background: rgba(255, 255, 255, 0.5); opacity: 1; border-radius: 2px; }
-.kb-carousel .carousel-indicators .active { background: var(--gold); }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.18); } }
 
 /* ---------- Why strip (Autozen why-boxes) ---------- */
@@ -420,11 +404,7 @@ ul { padding-left: 0; }
   .pricing-card { padding: 36px; gap: 28px; }
 }
 @media (max-width: 991.98px) {
-  .hero { padding-top: 70px; }
-  .hero h1 { max-width: none; }
-  .hero-ghost { top: 90px; }
-  .kb-carousel, .kb-carousel .carousel-item img { max-height: 460px; height: 460px; }
-  .why-box { border-right: 0; border-bottom: 1px solid var(--line-on-green); }
+      .why-box { border-right: 0; border-bottom: 1px solid var(--line-on-green); }
   .why .col-12:nth-child(odd) .why-box { border-right: 1px solid var(--line-on-green); }
   .about-thumb { padding: 0 0 110px 50px; margin-bottom: 40px; }
   .about-badge { right: 0; }
@@ -439,10 +419,7 @@ ul { padding-left: 0; }
   .section { padding: 70px 0; }
   .container-b { padding: 0 18px; }
   .navbar-brand img { height: 46px; }
-  .hero { padding-top: 56px; }
-  .hero-visual { margin-top: 44px; }
-  .kb-carousel, .kb-carousel .carousel-item img { max-height: 320px; height: 320px; }
-  .why-box { border-right: 0 !important; }
+      .why-box { border-right: 0 !important; }
   .why-box-inner { padding: 34px 22px; }
   .about-thumb { padding: 0 0 90px 30px; }
   .about-img-2 { width: 62%; }
@@ -521,8 +498,6 @@ ul { padding-left: 0; }
 }
 .hero-meta div:hover { background: var(--glass-bg-strong); border-color: rgba(255, 255, 255, 0.26); transform: translateY(-1px); }
 .hero-meta i { font-size: 16px; }
-.hero-visual { margin-top: 56px; }
-.kb-carousel { border-top: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* Brand pillars: glass cards instead of a bordered strip */
 .why { border: 0; padding: 36px 0 56px; }
@@ -604,4 +579,54 @@ ul { padding-left: 0; }
   .hero-meta { gap: 10px; }
   .hero-meta div { font-size: 13.5px; padding: 8px 14px 8px 12px; }
   .why-box-inner { padding: 26px 22px; }
+}
+
+/* =====================================================================
+   HERO 4 (Fixturbo home-4 pattern, brand-styled)
+   ===================================================================== */
+.hero-4 {
+  position: relative; overflow: hidden; z-index: 1;
+  background-size: cover; background-position: center right; background-repeat: no-repeat;
+  color: var(--white);
+}
+.hero-4::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.94) 28%, rgba(12, 66, 49, 0.72) 52%, rgba(20, 92, 61, 0.28) 78%, rgba(20, 92, 61, 0) 100%);
+}
+.hero-4::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(7, 31, 24, 0.35) 0%, rgba(7, 31, 24, 0) 30%, rgba(7, 31, 24, 0) 70%, rgba(7, 31, 24, 0.45) 100%);
+}
+.hero-4 .container-b { position: relative; z-index: 3; }
+.hero-style4 { padding: 150px 0 120px; }
+.hero-4 h1 { color: var(--white); max-width: 12ch; margin-bottom: 22px; }
+.hero-4 .hero-copy { max-width: 520px; font-size: 1.12rem; color: rgba(255, 255, 255, 0.86); margin-bottom: 34px; }
+.hero-4 .hero-meta { margin-top: 48px; }
+
+/* Angled translucent shapes (home-4 shape1/2/3), drawn in brand tones */
+.hero-4-shapes { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.hero-4-shapes .shape { position: absolute; height: 100%; opacity: 0; }
+.hero-4-shapes .shape polygon { fill: rgba(255, 255, 255, 0.10); }
+.hero-4-shapes .shape1 { right: 0; top: 0; width: 42%; animation: heroShapeIn 1.4s .3s cubic-bezier(.2,.7,.2,1) both; }
+.hero-4-shapes .shape2 { right: 0; top: 0; width: 56%; animation: heroShapeIn 1.4s .6s cubic-bezier(.2,.7,.2,1) both; }
+.hero-4-shapes .shape2 polygon { fill: rgba(47, 154, 98, 0.16); }
+.hero-4-shapes .shape3 { right: 6%; bottom: 0; top: auto; width: 30%; height: 36%; animation: heroShapeIn 1.4s 1s cubic-bezier(.2,.7,.2,1) both; }
+.hero-4-shapes .shape3 polygon { fill: rgba(204, 151, 34, 0.22); }
+@keyframes heroShapeIn { from { opacity: 0; transform: translateX(80px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Brand-pillar band sits directly under the hero on the gradient */
+.why { padding: 56px 0; }
+
+@media (max-width: 1199.98px) { .hero-style4 { padding: 120px 0 100px; } }
+@media (max-width: 991.98px) {
+  .hero-4 { background-position: 70% center; }
+  .hero-4::before { background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.92) 45%, rgba(12, 66, 49, 0.6) 100%); }
+  .hero-4 h1 { max-width: none; }
+  .hero-4-shapes .shape1, .hero-4-shapes .shape2 { width: 70%; }
+}
+@media (max-width: 767.98px) {
+  .hero-style4 { padding: 84px 0 72px; }
+  .hero-4::before { background: linear-gradient(180deg, rgba(7, 31, 24, 0.82) 0%, rgba(7, 31, 24, 0.9) 100%); }
+  .hero-4-shapes .shape3 { display: none; }
+  .why { padding: 40px 0; }
 }
