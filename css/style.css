@@ -358,6 +358,8 @@ ul { padding-left: 0; }
 .pillar-card:hover p { color: rgba(255, 255, 255, 0.86); }
 @media (hover: none) {
   .pillar-card .pillar-bg { opacity: 1; transform: none; }
+  .pillar-card .pillar-bg::after { background: linear-gradient(180deg, rgba(7, 31, 24, 0.55) 0%, rgba(7, 31, 24, 0.8) 50%, rgba(7, 31, 24, 0.94) 100%); }
+  .pillar-card { border-color: transparent; }
   .pillar-card i { background: rgba(255, 255, 255, 0.14); color: var(--gold); }
   .pillar-card h3 { color: var(--white); }
   .pillar-card p { color: rgba(255, 255, 255, 0.86); }
@@ -574,6 +576,13 @@ ul { padding-left: 0; }
   .hero-4-bg-img.is-b { opacity: 0; }
 }
 
+/* Horizontal slide-ins become vertical below the desktop grid: an element waiting
+   off-canvas to the right would otherwise widen the page on tablets and phones. */
+@media (max-width: 1199.98px) {
+  [data-aos="fade-left"], [data-aos="fade-right"] { transform: translate3d(0, 24px, 0) !important; }
+  [data-aos="fade-left"].aos-animate, [data-aos="fade-right"].aos-animate { transform: none !important; }
+}
+
 /* ---------------------------------------------------------------------
    14. Responsive
    ------------------------------------------------------------------- */
@@ -600,12 +609,18 @@ ul { padding-left: 0; }
   .hero-4::before { background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.92) 45%, rgba(12, 66, 49, 0.6) 100%); }
   .hero-4 h1 { max-width: none; }
   .hero-4-shapes .shape1, .hero-4-shapes .shape2 { width: 70%; }
-  .about-thumb { padding: 0 0 110px 50px; margin-bottom: 40px; }
+  .about-thumb { padding: 0 0 110px 50px; margin: 0 auto 40px; max-width: 560px; }
   .pricing-card { flex-direction: column; gap: 24px; }
   .pricing-price-wrap { flex-direction: row; align-items: center; justify-content: space-between; flex: none; }
 }
 @media (max-width: 767.98px) {
   body { font-size: 16px; }
+  #about .row.g-5 { --bs-gutter-x: 1.25rem; }
+
+  .about-thumb { max-width: 420px; margin-left: auto; margin-right: auto; }
+  .about-content-wrap { overflow-wrap: anywhere; }
+  /* Touch devices: pillar photos are always shown, so keep the scrim and white text */
+  .pillar-card .pillar-bg::after { background: linear-gradient(180deg, rgba(7, 31, 24, 0.55) 0%, rgba(7, 31, 24, 0.8) 50%, rgba(7, 31, 24, 0.94) 100%); }
   .section { padding: 70px 0; }
   .container-b { padding: 0 18px; }
   .navbar-brand img { height: 46px; }
@@ -622,6 +637,7 @@ ul { padding-left: 0; }
   .pricing-card { padding: 28px; }
   .contact-card { padding: 28px; }
   .footer { padding-top: 64px; }
+  .footer .row.g-5 { --bs-gutter-x: 1.25rem; --bs-gutter-y: 2rem; }
   .footer-bottom { margin-top: 44px; text-align: center; }
 }
 @media (max-height: 720px) and (min-width: 768px) {
