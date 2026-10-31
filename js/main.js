@@ -37,6 +37,10 @@
       }, 1200);
     });
 
+    // Header shadow once scrolled
+    var header = document.querySelector('.site-header');
+    $(window).on('scroll', function () { header.classList.toggle('scrolled', window.scrollY > 24); });
+
     // Active nav link on scroll
     var sections = $('main section[id]');
     var navLinks = $('.navbar .nav-link');

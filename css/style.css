@@ -18,7 +18,12 @@
   --green-deep: #04362A;
   --green-soft: #0B5C48;
   --green-tint: #E6EFEB;
-  --green-gradient: linear-gradient(120deg, #071F18 0%, #145C3D 50%, #35A66A 100%);
+  --green-gradient: linear-gradient(120deg, #071F18 0%, #0E4432 38%, #145C3D 64%, #2F9A62 100%);
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-bg-strong: rgba(255, 255, 255, 0.11);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-shadow: 0 10px 30px rgba(3, 25, 18, 0.25);
+  --glass-blur: 10px;
   --gold: #CC9722;
   --gold-dark: #B3831A;
   --white: #FFFFFF;
@@ -155,13 +160,15 @@ ul { padding-left: 0; }
 .navbar-toggler { border: 0; padding: 6px; }
 .navbar-toggler:focus { box-shadow: none; }
 .navbar-toggler-icon { width: 30px; height: 30px; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23064C3B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-.offcanvas { background: var(--white); width: 320px !important; }
-.offcanvas-header { border-bottom: 1px solid var(--line); }
-.offcanvas-header img { height: 110px; }
-.offcanvas .navbar-nav { gap: 2px; }
-.offcanvas .nav-link::after { display: none; }
-.offcanvas .nav-link { font-size: 18px; padding: 12px 0 !important; border-bottom: 1px solid var(--line); }
-.offcanvas .btn-close { opacity: 1; }
+@media (max-width: 991.98px) {
+  .offcanvas { background: var(--white); width: 320px !important; }
+  .offcanvas-header { border-bottom: 1px solid var(--line); }
+  .offcanvas-header img { height: 110px; }
+  .offcanvas .navbar-nav { gap: 2px; }
+  .offcanvas .nav-link::after { display: none; }
+  .offcanvas .nav-link { font-size: 18px; padding: 12px 0 !important; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .offcanvas .btn-close { opacity: 1; }
+}
 .header-cta { display: none; }
 @media (min-width: 992px) { .header-cta { display: inline-flex; margin-left: 18px; } }
 
@@ -208,11 +215,6 @@ ul { padding-left: 0; }
 .why-box-inner i { font-size: 34px; color: var(--gold); display: block; margin-bottom: 18px; transition: color .3s; }
 .why-box-inner h4 { color: var(--white); font-size: 1.15rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
 .why-box-inner p { color: rgba(255, 255, 255, 0.74); font-size: 15.5px; margin: 0; }
-.why-box:hover .why-box-inner, .why-box.active .why-box-inner { background: var(--white); }
-.why-box:hover .why-box-inner h4, .why-box.active .why-box-inner h4 { color: var(--green); }
-.why-box:hover .why-box-inner p, .why-box.active .why-box-inner p { color: var(--ink-2); }
-.why-box:hover .why-box-inner i, .why-box.active .why-box-inner i { color: var(--gold-dark); }
-.why-box.active:hover .why-box-inner { background: var(--soft); }
 
 /* =====================================================================
    ABOUT (Fixturbo about-area-1: overlapping images + badge + checklist)
@@ -451,4 +453,155 @@ ul { padding-left: 0; }
   .footer { padding-top: 64px; }
   .footer-bottom { margin-top: 44px; text-align: center; }
   .ba-caption { flex-direction: column; align-items: flex-start; }
+}
+
+/* =====================================================================
+   REFINEMENT LAYER — premium glassmorphism (restrained, ~20% of surfaces)
+   Glass is used only on: navbar, hero chips, brand-pillar cards, gallery
+   note/tags, testimonial cards, rating pill, floating WhatsApp button.
+   Everything else stays solid (white / soft white / deep green).
+   ===================================================================== */
+
+/* Glass primitive */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass, .site-header, .why-box-inner, .testimonial-box, .rating-pill, .hero-meta div, .hero-kicker { background: rgba(7, 31, 24, 0.82) !important; }
+  .site-header { background: rgba(255, 255, 255, 0.97) !important; }
+}
+
+/* Gradient surfaces: add a soft light bloom for depth (no glow, just atmosphere) */
+.bg-green { position: relative; }
+.bg-green::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(60% 50% at 85% 10%, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(40% 40% at 10% 90%, rgba(204, 151, 34, 0.08) 0%, rgba(204, 151, 34, 0) 70%);
+}
+.bg-green > * { position: relative; z-index: 1; }
+
+/* Navbar: translucent with gentle blur; stays readable over light and green */
+.site-header {
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(6, 76, 59, 0.10);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 8px 24px rgba(6, 76, 59, 0.06);
+  -webkit-backdrop-filter: blur(12px) saturate(1.5);
+  backdrop-filter: blur(12px) saturate(1.5);
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.site-header.scrolled { background: rgba(255, 255, 255, 0.9); box-shadow: 0 8px 28px rgba(6, 76, 59, 0.10); }
+.navbar .nav-link { border-radius: 999px; }
+.navbar .nav-link:hover { background: rgba(6, 76, 59, 0.06); }
+.navbar .nav-link::after { bottom: 2px; }
+@media (max-width: 991.98px) { .offcanvas { background: rgba(255, 255, 255, 0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); } }
+
+/* Hero: gold-gradient accent word, glass kicker and chips */
+.hero h1 em {
+  background: linear-gradient(92deg, #E4BA55 0%, var(--gold) 55%, #B98A1E 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-kicker {
+  padding: 8px 16px 8px 12px; border-radius: 999px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  color: #E8D29A;
+}
+.hero-meta { border-top: 0; padding-top: 0; gap: 12px; margin-top: 44px; }
+.hero-meta div {
+  padding: 10px 18px 10px 14px; border-radius: 999px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  color: rgba(255, 255, 255, 0.9); font-size: 14.5px;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.hero-meta div:hover { background: var(--glass-bg-strong); border-color: rgba(255, 255, 255, 0.26); transform: translateY(-1px); }
+.hero-meta i { font-size: 16px; }
+.hero-visual { margin-top: 56px; }
+.kb-carousel { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+
+/* Brand pillars: glass cards instead of a bordered strip */
+.why { border: 0; padding: 36px 0 56px; }
+.why .container-b { padding: 0 24px; }
+.why .row { margin: 0 -10px; row-gap: 20px; }
+.why .col-12 { padding: 0 10px; }
+.why-box, .why .col-12:nth-child(odd) .why-box, .why .col-12:last-child .why-box { border: 0 !important; }
+.why-box-inner {
+  border-radius: var(--radius); padding: 34px 28px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2); backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+  transition: background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.why-box-inner i { width: 46px; height: 46px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(204, 151, 34, 0.14); border: 1px solid rgba(204, 151, 34, 0.28); margin-bottom: 20px; }
+.why-box-inner h4 { font-size: 1.05rem; }
+.why-box:hover .why-box-inner, .why-box.active .why-box-inner { background: var(--glass-bg-strong); border-color: rgba(255, 255, 255, 0.26); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(3, 25, 18, 0.32); }
+.why-box.active .why-box-inner { border-top: 1px solid rgba(228, 186, 85, 0.6); }
+
+/* Services: stay solid white; refine hover only */
+.service-card { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset; }
+.service-card:hover { box-shadow: var(--shadow); border-color: rgba(6, 76, 59, 0.12); }
+.service-icon { background: linear-gradient(135deg, var(--green-soft) 0%, var(--green) 100%); box-shadow: 0 6px 16px rgba(6, 76, 59, 0.22); }
+
+/* Gallery: glass note + tags, deeper frame on the comparison */
+.gallery-note { border: 1px solid var(--glass-border); background: var(--glass-bg); border-radius: var(--radius-sm); padding: 16px 18px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.ba { border: 1px solid rgba(255, 255, 255, 0.18); }
+.ba-caption .tag { background: var(--glass-bg); border-color: var(--glass-border); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.gallery-tabs .nav-link { transition: color .3s, transform .3s; }
+.gallery-tabs .nav-link:hover { transform: translateX(3px); }
+
+/* Pricing: solid; featured card carries the gradient */
+.pricing-card.featured { background: linear-gradient(135deg, #0A3B2D 0%, #145C3D 60%, #1D7A4F 100%); border-color: rgba(255, 255, 255, 0.12); }
+.pricing-card.featured .pricing-icon { background: rgba(255, 255, 255, 0.92); }
+.pricing-card.featured .btn-white { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
+.pricing-foot { background: rgba(255, 255, 255, 0.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+/* Testimonials: glass cards on the gradient */
+.testimonial-box {
+  background: var(--glass-bg); border-color: var(--glass-border); box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2); backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+  transition: background .3s ease, border-color .3s ease, transform .3s ease;
+}
+.testimonial-box:hover { background: var(--glass-bg-strong); border-color: rgba(255, 255, 255, 0.24); transform: translateY(-3px); }
+.rating-pill { background: var(--glass-bg); border-color: var(--glass-border); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); }
+.rating-pill .avatar { border-color: rgba(255, 255, 255, 0.25); }
+.slick-slider .slick-dots button { background: rgba(255, 255, 255, 0.22); }
+
+/* Contact: green info card gets the gradient; form stays clean white */
+.contact-card.green { background: linear-gradient(140deg, #071F18 0%, #0E4432 55%, #145C3D 100%); border-color: rgba(255, 255, 255, 0.12); box-shadow: var(--shadow); }
+.contact-line .icon-contact { background: var(--glass-bg); border-color: var(--glass-border); }
+.contact-photo { border-color: rgba(255, 255, 255, 0.18); }
+.contact-card:not(.green) { box-shadow: var(--shadow-sm); }
+.form-control:hover, .form-select:hover { border-color: rgba(6, 76, 59, 0.3); }
+
+/* Footer: subtle top highlight */
+.footer { position: relative; }
+.footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0) 100%); }
+
+/* Floating WhatsApp: glass ring, calm hover */
+.wa-float { background: rgba(6, 76, 59, 0.86); border: 1px solid rgba(255, 255, 255, 0.35); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); box-shadow: 0 12px 30px rgba(6, 76, 59, 0.3); }
+.wa-float:hover { background: rgba(6, 76, 59, 0.98); transform: translateY(-2px); }
+
+/* Buttons: soft lift, no glow */
+.btn { box-shadow: none; }
+.btn-brand, .btn-gold { box-shadow: 0 6px 16px rgba(6, 76, 59, 0.14); }
+.btn-brand:hover, .btn-gold:hover { box-shadow: 0 10px 22px rgba(6, 76, 59, 0.2); }
+.btn-outline-light-2 { background: rgba(255, 255, 255, 0.06); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+@media (max-width: 991.98px) {
+  .why { padding: 28px 0 44px; }
+  .why-box { border: 0 !important; }
+}
+@media (max-width: 767.98px) {
+  .hero-meta { gap: 10px; }
+  .hero-meta div { font-size: 13.5px; padding: 8px 14px 8px 12px; }
+  .why-box-inner { padding: 26px 22px; }
 }
