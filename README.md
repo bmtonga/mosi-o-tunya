@@ -55,7 +55,7 @@ Re-check contrast whenever a brand colour token changes.
 
 ## Status / to-do
 
-- [ ] **Replace demonstration imagery.** About images are brand-concept renders from the identity presentation (some show the earlier "Car Spa" descriptor). Swap for real photographs of the Woodlands facility.
+- [ ] **Facility photography.** Hero and About use stock photos; replace with real photographs of the Woodlands facility when available.
 - [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing`.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
