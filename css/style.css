@@ -576,6 +576,10 @@ ul { padding-left: 0; }
   .hero-4-bg-img.is-b { opacity: 0; }
 }
 
+/* If a reveal never fires (anchor jump, AOS failure), show the content anyway */
+html.aos-settled [data-aos]:not(.aos-animate) { opacity: 1 !important; transform: none !important; }
+html:not(.js-aos) [data-aos] { opacity: 1 !important; transform: none !important; }
+
 /* Horizontal slide-ins become vertical below the desktop grid: an element waiting
    off-canvas to the right would otherwise widen the page on tablets and phones. */
 @media (max-width: 1199.98px) {

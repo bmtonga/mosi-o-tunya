@@ -5,7 +5,26 @@
   $(function () {
     // Animate on scroll
     if (window.AOS) {
-      AOS.init({ duration: 800, once: true, offset: 60 });
+      AOS.init({ duration: 800, once: true, offset: 40, anchorPlacement: 'top-bottom' });
+      // AOS only reacts to scroll events, so anchor jumps (nav clicks, #contact links,
+      // back/forward) can leave a section invisible. Reveal anything in view ourselves.
+      var revealInView = function () {
+        var vh = window.innerHeight;
+        document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < vh && r.bottom > 0) el.classList.add('aos-animate');
+        });
+      };
+      var revealSoon = function () { [0, 150, 500, 1000].forEach(function (t) { setTimeout(revealInView, t); }); };
+      document.addEventListener('aos:in', revealInView);
+      window.addEventListener('hashchange', revealSoon);
+      window.addEventListener('pageshow', revealSoon);
+      window.addEventListener('resize', revealInView);
+      window.addEventListener('scroll', revealInView, { passive: true });
+      $(document).on('click', 'a[href^="#"]', revealSoon);
+      revealSoon();
+      // Final safety net: nothing stays hidden for more than a few seconds
+      setTimeout(function () { document.documentElement.classList.add('aos-settled'); }, 4000);
     }
 
     // Testimonials carousel (Slick)
