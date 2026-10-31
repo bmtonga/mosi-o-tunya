@@ -364,29 +364,64 @@ ul { padding-left: 0; }
 }
 
 /* ---------------------------------------------------------------------
-   8. Services (Fixturbo service-card grid)
+   8. Services (Fixturbo service-card grid) — cinematic image reveal on hover
    ------------------------------------------------------------------- */
 .service-card {
-  position: relative; overflow: hidden; height: 100%; padding: 38px 34px 34px;
+  --sv-ease: cubic-bezier(.22, .61, .36, 1);
+  --sv-dur: .48s;
+  position: relative; isolation: isolate; overflow: hidden; height: 100%; padding: 38px 34px 34px;
   background: var(--white); border-radius: var(--radius); border: 1px solid var(--line);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
-  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  transition: transform var(--sv-dur) var(--sv-ease), box-shadow var(--sv-dur) var(--sv-ease), border-color var(--sv-dur) var(--sv-ease);
 }
-.service-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(6, 76, 59, 0.12); }
-.service-card:hover::before { transform: scaleX(1); }
+.service-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 2; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform var(--sv-dur) var(--sv-ease); }
+.service-card .service-bg {
+  position: absolute; inset: 0; z-index: 0; border-radius: inherit; pointer-events: none;
+  background-size: cover; background-position: center; opacity: 0; transform: scale(1.05);
+  transition: opacity var(--sv-dur) var(--sv-ease), transform .6s var(--sv-ease);
+}
+.service-card .service-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7, 31, 24, 0.55) 0%, rgba(7, 31, 24, 0.78) 45%, rgba(7, 31, 24, 0.94) 100%);
+}
+.service-card > :not(.service-bg) { position: relative; z-index: 1; }
 .service-icon {
   width: 64px; height: 64px; border-radius: var(--radius-sm); margin-bottom: 24px; font-size: 28px; color: var(--white);
   display: inline-flex; align-items: center; justify-content: center;
   background: linear-gradient(135deg, var(--green-soft) 0%, var(--green) 100%); box-shadow: 0 6px 16px rgba(6, 76, 59, 0.22);
+  transition: background var(--sv-dur) var(--sv-ease), color var(--sv-dur) var(--sv-ease), box-shadow var(--sv-dur) var(--sv-ease);
 }
 .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
-.service-card h3 a { color: var(--ink); }
-.service-card h3 a:hover { color: var(--green); }
-.service-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 20px; }
-.service-card .link-arrow { color: var(--green); font-size: 13.5px; }
-.service-card .num { position: absolute; right: 26px; top: 26px; font-family: var(--font-head); font-weight: 800; font-size: 44px; color: var(--sage-tint); line-height: 1; transition: color .3s; }
-.service-card:hover .num { color: var(--green-tint); }
+.service-card h3 a { color: var(--ink); transition: color var(--sv-dur) var(--sv-ease); }
+.service-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 20px; transition: color var(--sv-dur) var(--sv-ease); }
+.service-card .link-arrow { color: var(--green); font-size: 13.5px; transition: color var(--sv-dur) var(--sv-ease); }
+.service-card .num { position: absolute; right: 26px; top: 26px; font-family: var(--font-head); font-weight: 800; font-size: 44px; color: var(--sage-tint); line-height: 1; transition: color var(--sv-dur) var(--sv-ease); }
+
+/* Hover / keyboard-focus state */
+.service-card:hover, .service-card:focus-within { transform: translateY(-5px); box-shadow: 0 22px 48px rgba(3, 25, 18, 0.28); border-color: rgba(255, 255, 255, 0.14); }
+.service-card:hover::before, .service-card:focus-within::before { transform: scaleX(1); }
+.service-card:hover .service-bg, .service-card:focus-within .service-bg { opacity: 1; transform: scale(1); }
+.service-card:hover .service-icon, .service-card:focus-within .service-icon { background: var(--gold); color: var(--green-deep); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+.service-card:hover h3 a, .service-card:focus-within h3 a { color: var(--white); }
+.service-card:hover p, .service-card:focus-within p { color: rgba(255, 255, 255, 0.86); }
+.service-card:hover .link-arrow, .service-card:focus-within .link-arrow { color: #E4BA55; }
+.service-card:hover .num, .service-card:focus-within .num { color: rgba(255, 255, 255, 0.14); }
+
+/* Touch devices: clean white card, no image reveal */
+@media (hover: none) {
+  .service-card .service-bg { display: none; }
+  .service-card:hover, .service-card:focus-within { transform: none; box-shadow: var(--shadow-sm); border-color: var(--line); }
+  .service-card:hover .service-icon, .service-card:focus-within .service-icon { background: linear-gradient(135deg, var(--green-soft) 0%, var(--green) 100%); color: var(--white); }
+  .service-card:hover h3 a, .service-card:focus-within h3 a { color: var(--ink); }
+  .service-card:hover p, .service-card:focus-within p { color: var(--muted); }
+  .service-card:hover .link-arrow, .service-card:focus-within .link-arrow { color: var(--green); }
+  .service-card:hover .num, .service-card:focus-within .num { color: var(--sage-tint); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .service-card .service-bg, .service-card::before { transition-duration: .01ms; }
+  .service-card:hover, .service-card:focus-within { transform: none; }
+  .service-card .service-bg { transform: none; }
+}
 
 /* ---------------------------------------------------------------------
    9. Packages (Fixturbo pricing-card)
