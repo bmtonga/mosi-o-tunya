@@ -680,9 +680,7 @@ ul { padding-left: 0; }
   height: 100%; padding: 30px 26px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset; position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
-.pillar-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform .35s ease; }
 .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
-.pillar-card:hover::before { transform: scaleY(1); }
 .pillar-card i { width: 46px; height: 46px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 19px; background: var(--green-tint); color: var(--green); margin-bottom: 18px; }
 .pillar-card h4 { font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; color: var(--green); }
 .pillar-card p { font-size: 15px; color: var(--muted); margin: 0; }
@@ -701,7 +699,6 @@ ul { padding-left: 0; }
 .pillar-card .pillar-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 31, 24, 0.18) 0%, rgba(7, 31, 24, 0.55) 45%, rgba(7, 31, 24, 0.9) 100%); }
 .pillar-card:hover .pillar-bg, .pillar-card:focus-within .pillar-bg { opacity: 1; transform: scale(1); }
 .pillar-card i, .pillar-card h4, .pillar-card p { transition: color .35s ease, background .35s ease, border-color .35s ease; position: relative; z-index: 1; }
-.pillar-card::before { z-index: 2; }
 .pillar-card:hover { border-color: rgba(255, 255, 255, 0.18); }
 .pillar-card:hover i { background: rgba(255, 255, 255, 0.14); color: var(--gold); border: 1px solid rgba(255, 255, 255, 0.22); }
 .pillar-card:hover h4 { color: var(--white); }
