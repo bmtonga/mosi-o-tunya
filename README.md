@@ -15,10 +15,9 @@ The site combines two licensed templates into one consistent design, restyled to
 | Brand-pillar strip (Clean · Care · Elevate · Corporate) | Autozen "why" boxes |
 | About (overlapping images, badge, checklist) | Fixturbo |
 | Services (6 cards) | Fixturbo |
-| Results — before/after compare slider inside tabs | Autozen project tabs + custom slider |
 | Packages (6 pricing cards) | Fixturbo |
 | Testimonials carousel | Autozen |
-| Contact info + booking form + map | Autozen |
+| Contact info + map | Autozen |
 | Footer | Autozen |
 
 Brand tokens live at the top of `css/style.css`:
@@ -41,9 +40,9 @@ assets/img/                hero, about, gallery, site photography
 
 ## Status / to-do
 
-- [ ] **Replace demonstration imagery.** Hero, about and before/after images are brand-concept renders from the identity presentation (some still show the earlier "Car Spa" descriptor). Swap for real photographs of the Woodlands facility. Before/after pairs go in `assets/img/gallery/<name>-before.jpg` / `<name>-after.jpg` (16:9).
+- [ ] **Replace demonstration imagery.** About images are brand-concept renders from the identity presentation (some show the earlier "Car Spa" descriptor). Swap for real photographs of the Woodlands facility.
 - [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing`.
 - [ ] **Replace testimonials** with real customer feedback.
-- [ ] **Booking backend.** The form currently validates client-side and shows a confirmation toast; wire it to email/WhatsApp/booking system (see `js/main.js`).
+- [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
 - [ ] Add real social media URLs (currently generic Facebook/Instagram links).
 - [ ] Terms & Privacy pages.
