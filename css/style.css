@@ -586,9 +586,22 @@ ul { padding-left: 0; }
    ===================================================================== */
 .hero-4 {
   position: relative; overflow: hidden; z-index: 1;
-  background-size: cover; background-position: center right; background-repeat: no-repeat;
+  background: #071F18;
   color: var(--white);
 }
+/* Two photos cross-fading slowly with a gentle drift */
+.hero-4-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-4-bg-img { position: absolute; inset: 0; background-size: cover; background-position: center right; background-repeat: no-repeat; animation: heroFade 16s ease-in-out infinite; will-change: opacity, transform; }
+.hero-4-bg-img.is-a { background-position: right 22%; }
+.hero-4-bg-img.is-b { animation-delay: -8s; background-position: right 30%; }
+@keyframes heroFade {
+  0%   { opacity: 0; transform: scale(1.04); }
+  12%  { opacity: 1; }
+  50%  { opacity: 1; transform: scale(1); }
+  62%  { opacity: 0; }
+  100% { opacity: 0; transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-4-bg-img { animation: none; } .hero-4-bg-img.is-b { opacity: 0; } .hero-4-bg-img.is-a { opacity: 1; } }
 .hero-4::before {
   content: ""; position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.94) 28%, rgba(12, 66, 49, 0.72) 52%, rgba(20, 92, 61, 0.28) 78%, rgba(20, 92, 61, 0) 100%);
@@ -619,7 +632,8 @@ ul { padding-left: 0; }
 
 @media (max-width: 1199.98px) { .hero-style4 { padding: 120px 0 100px; } }
 @media (max-width: 991.98px) {
-  .hero-4 { background-position: 70% center; }
+  .hero-4-bg-img.is-a { background-position: 70% 20%; }
+  .hero-4-bg-img.is-b { background-position: 62% 30%; }
   .hero-4::before { background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.92) 45%, rgba(12, 66, 49, 0.6) 100%); }
   .hero-4 h1 { max-width: none; }
   .hero-4-shapes .shape1, .hero-4-shapes .shape2 { width: 70%; }
