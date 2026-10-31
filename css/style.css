@@ -199,8 +199,9 @@ ul { padding-left: 0; }
 .topbar li { display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.86); }
 .topbar li i { color: var(--gold); font-size: 15px; }
 
+.site-header-wrap { position: sticky; top: calc(-1 * var(--topbar-h, 0px)); z-index: 1030; }
 .site-header {
-  position: sticky; top: 0; z-index: 1030;
+  position: relative;
   background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(6, 76, 59, 0.10);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 8px 24px rgba(6, 76, 59, 0.06);
@@ -314,6 +315,7 @@ ul { padding-left: 0; }
 .about-more-btn .when-open { display: none; }
 .about-more-btn[aria-expanded="true"] .when-open { display: inline; }
 .about-more-btn[aria-expanded="true"] .when-closed { display: none; }
+.about-more:focus { outline: none; }
 .about-more-inner { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
 .about-more h3 { font-size: 1.25rem; }
 .about-more h4 { font-size: 1.05rem; }

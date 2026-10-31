@@ -54,6 +54,8 @@
     var headerWrap = document.querySelector('.site-header-wrap');
     function setHeaderHeight() {
       document.documentElement.style.setProperty('--header-h', headerWrap.offsetHeight + 'px');
+      var tb = document.querySelector('.topbar');
+      document.documentElement.style.setProperty('--topbar-h', (tb ? tb.offsetHeight : 0) + 'px');
     }
     setHeaderHeight();
     $(window).on('resize', setHeaderHeight);
@@ -102,6 +104,25 @@
       counters.forEach(function (c) { io.observe(c); });
     } else {
       counters.forEach(function (c) { c.textContent = c.dataset.count; });
+    }
+
+    // About: scroll the expanded story into view once it has opened (respect sticky header)
+    var aboutMore = document.getElementById('aboutMore');
+    if (aboutMore) {
+      aboutMore.addEventListener('shown.bs.collapse', function () {
+        var offset = (document.querySelector('.site-header') || {}).offsetHeight || 0;
+        var top = aboutMore.getBoundingClientRect().top + window.pageYOffset - offset - 16;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        aboutMore.setAttribute('tabindex', '-1');
+        aboutMore.focus({ preventScroll: true });
+      });
+      aboutMore.addEventListener('hidden.bs.collapse', function () {
+        var btn = document.querySelector('.about-more-btn');
+        var offset = (document.querySelector('.site-header') || {}).offsetHeight || 0;
+        var top = btn.getBoundingClientRect().top + window.pageYOffset - offset - window.innerHeight * 0.4;
+        window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+        btn.focus({ preventScroll: true });
+      });
     }
 
     // Map facade: the Google Maps embed is only fetched on request
