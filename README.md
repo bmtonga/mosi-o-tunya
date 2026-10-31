@@ -59,5 +59,5 @@ Re-check contrast whenever a brand colour token changes.
 - [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing`.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
-- [ ] Add real social media URLs (currently generic Facebook/Instagram links).
+- [ ] Add Instagram URL (Facebook is linked; Instagram still points to instagram.com).
 - [ ] Terms & Privacy pages.
