@@ -611,10 +611,12 @@ ul { padding-left: 0; }
   background: linear-gradient(180deg, rgba(7, 31, 24, 0.35) 0%, rgba(7, 31, 24, 0) 30%, rgba(7, 31, 24, 0) 70%, rgba(7, 31, 24, 0.45) 100%);
 }
 .hero-4 .container-b { position: relative; z-index: 3; }
-.hero-style4 { padding: 150px 0 120px; }
-.hero-4 h1 { color: var(--white); max-width: 12ch; margin-bottom: 22px; }
-.hero-4 .hero-copy { max-width: 520px; font-size: 1.12rem; color: rgba(255, 255, 255, 0.86); margin-bottom: 34px; }
-.hero-4 .hero-meta { margin-top: 48px; }
+.hero-4 { min-height: calc(100vh - var(--header-h, 184px)); min-height: calc(100svh - var(--header-h, 184px)); display: flex; align-items: center; }
+.hero-4 .container-b { width: 100%; }
+.hero-style4 { padding: 56px 0 56px; }
+.hero-4 h1 { color: var(--white); max-width: 12ch; margin-bottom: 18px; font-size: clamp(2.4rem, 4.6vw, 4rem); }
+.hero-4 .hero-copy { max-width: 560px; font-size: 1.08rem; color: rgba(255, 255, 255, 0.86); margin-bottom: 28px; }
+.hero-4 .hero-meta { margin-top: 36px; }
 
 /* Angled translucent shapes (home-4 shape1/2/3), drawn in brand tones */
 .hero-4-shapes { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
@@ -630,7 +632,7 @@ ul { padding-left: 0; }
 /* Brand-pillar band sits directly under the hero on the gradient */
 .why { padding: 56px 0; }
 
-@media (max-width: 1199.98px) { .hero-style4 { padding: 120px 0 100px; } }
+@media (max-width: 1199.98px) { .hero-style4 { padding: 48px 0; } }
 @media (max-width: 991.98px) {
   .hero-4-bg-img.is-a { background-position: 70% 20%; }
   .hero-4-bg-img.is-b { background-position: 62% 30%; }
@@ -639,8 +641,17 @@ ul { padding-left: 0; }
   .hero-4-shapes .shape1, .hero-4-shapes .shape2 { width: 70%; }
 }
 @media (max-width: 767.98px) {
-  .hero-style4 { padding: 84px 0 72px; }
+  .hero-style4 { padding: 40px 0 44px; }
+  .hero-4 { min-height: 0; }
   .hero-4::before { background: linear-gradient(180deg, rgba(7, 31, 24, 0.82) 0%, rgba(7, 31, 24, 0.9) 100%); }
   .hero-4-shapes .shape3 { display: none; }
   .why { padding: 40px 0; }
+}
+
+@media (max-height: 720px) and (min-width: 768px) {
+  .hero-style4 { padding: 36px 0; }
+  .hero-4 h1 { font-size: clamp(2.2rem, 3.8vw, 3.2rem); margin-bottom: 12px; }
+  .hero-4 .hero-copy { font-size: 1rem; margin-bottom: 20px; max-width: 520px; }
+  .hero-kicker { margin-bottom: 14px; }
+  .hero-4 .hero-meta { display: none; }
 }

@@ -37,6 +37,14 @@
       }, 1200);
     });
 
+    // Measure the full header (top bar + navbar) so the hero fits the first screen
+    var headerWrap = document.querySelector('.site-header-wrap');
+    function setHeaderHeight() {
+      document.documentElement.style.setProperty('--header-h', headerWrap.offsetHeight + 'px');
+    }
+    setHeaderHeight();
+    $(window).on('resize', setHeaderHeight);
+
     // Header shadow once scrolled
     var header = document.querySelector('.site-header');
     $(window).on('scroll', function () { header.classList.toggle('scrolled', window.scrollY > 24); });
