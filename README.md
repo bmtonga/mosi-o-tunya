@@ -34,7 +34,7 @@ js/main.js                 site scripts (AOS, Slick, header measure, nav state, 
 js/vendor/                 jquery 3.7.1, bootstrap 5.3.3, aos, slick
 assets/brand/logos/        SVG logo set (stacked, compact, horizontal, icon × colour/reverse/black/white/green)
 assets/brand/icons/        square profile icons 64–1024
-assets/img/                hero, about, pillars photography
+assets/img/                hero, about, pillars, services photography
 ```
 
 ## Conventions
