@@ -61,6 +61,7 @@
    2. Base
    ------------------------------------------------------------------- */
 html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
 :focus { outline: none; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 .btn:focus-visible, .navbar .nav-link:focus-visible, .btn-icon-sm:focus-visible { outline: 3px solid var(--gold) !important; outline-offset: 3px; box-shadow: none !important; }
@@ -199,16 +200,24 @@ ul { padding-left: 0; }
 .topbar li { display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.86); }
 .topbar li i { color: var(--gold); font-size: 15px; }
 
-.site-header-wrap { position: sticky; top: calc(-1 * var(--topbar-h, 0px)); z-index: 1030; }
+.site-header-wrap { position: sticky; top: calc(-1 * var(--topbar-h, 0px)); z-index: 1030; isolation: isolate; }
 .site-header {
   position: relative;
-  background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(6, 76, 59, 0.10);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 8px 24px rgba(6, 76, 59, 0.06);
-  -webkit-backdrop-filter: blur(12px) saturate(1.5); backdrop-filter: blur(12px) saturate(1.5);
-  transition: background .3s ease, box-shadow .3s ease;
+  box-shadow: 0 8px 24px rgba(6, 76, 59, 0.06);
+  transition: box-shadow .3s ease;
 }
-.site-header.scrolled { background: rgba(255, 255, 255, 0.9); box-shadow: 0 8px 28px rgba(6, 76, 59, 0.10); }
+/* Glass is on a pseudo-element: backdrop-filter on the header itself would make it the
+   containing block for the fixed offcanvas menu and break the mobile drawer. */
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  -webkit-backdrop-filter: blur(12px) saturate(1.5); backdrop-filter: blur(12px) saturate(1.5);
+  transition: background .3s ease;
+}
+.site-header.scrolled { box-shadow: 0 8px 28px rgba(6, 76, 59, 0.10); }
+.site-header.scrolled::before { background: rgba(255, 255, 255, 0.9); }
 .navbar { padding: 14px 0; }
 .navbar .container-b { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .navbar-brand img { height: 54px; width: auto; display: block; }
@@ -517,11 +526,14 @@ ul { padding-left: 0; }
   .pricing-card { padding: 36px; gap: 28px; }
 }
 @media (max-width: 991.98px) {
-  .offcanvas { width: 320px !important; background: rgba(255, 255, 255, 0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-  .offcanvas-header { border-bottom: 1px solid var(--line); }
-  .offcanvas-header img { height: 110px; }
+  .offcanvas { width: min(320px, 86vw) !important; background: rgba(255, 255, 255, 0.96); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-left: 1px solid var(--line); }
+  .offcanvas-body { padding: 8px 24px 24px; }
+  .offcanvas-header { border-bottom: 1px solid var(--line); padding: 20px 24px; }
+  .offcanvas-header img { height: 96px; }
   .offcanvas .navbar-nav { gap: 2px; }
-  .offcanvas .nav-link { font-size: 18px; padding: 12px 0 !important; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .offcanvas .nav-link { font-size: 18px; padding: 14px 0 !important; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .offcanvas .nav-link.active { color: var(--green) !important; }
+  .offcanvas .nav-link:hover { background: transparent; }
   .offcanvas .nav-link::after { display: none; }
   .offcanvas .btn-close { opacity: 1; }
   .hero-4-bg-img.is-a { background-position: 70% 20%; }
