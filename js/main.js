@@ -78,10 +78,5 @@
     } else {
       counters.forEach(function (c) { c.textContent = c.dataset.count; });
     }
-
-    // Fancybox (for future gallery lightboxes)
-    if (window.Fancybox) {
-      Fancybox.bind('[data-fancybox]', {});
-    }
   });
 })(jQuery);
