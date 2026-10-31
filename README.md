@@ -11,9 +11,8 @@ The site combines two licensed templates into one consistent design, restyled to
 | Section | Source pattern |
 | --- | --- |
 | Top bar, navbar, offcanvas menu | Autozen |
-| Hero (split headline, ghost title, Ken Burns carousel) | Autozen |
-| Brand-pillar strip (Clean · Care · Elevate · Corporate) | Autozen "why" boxes |
-| About (overlapping images, badge, checklist) | Fixturbo |
+| Hero (full-bleed photo, left scrim, angled shapes) | Fixturbo home-4 |
+| About "Know About Us" (image stack, counter, checklist, Read More expanding story + Clean/Care/Elevate pillars) | Fixturbo home-5 |
 | Services (6 cards) | Fixturbo |
 | Packages (6 pricing cards) | Fixturbo |
 | Testimonials carousel | Autozen |

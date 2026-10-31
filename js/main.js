@@ -57,6 +57,28 @@
       if (oc) oc.hide();
     });
 
+    // Count-up for the About counter (runs once when it scrolls into view)
+    var counters = document.querySelectorAll('.counter[data-count]');
+    if (counters.length && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var el = en.target, target = parseInt(el.dataset.count, 10), start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / 900, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (c) { io.observe(c); });
+    } else {
+      counters.forEach(function (c) { c.textContent = c.dataset.count; });
+    }
+
     // Fancybox (for future gallery lightboxes)
     if (window.Fancybox) {
       Fancybox.bind('[data-fancybox]', {});

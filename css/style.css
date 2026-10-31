@@ -655,3 +655,38 @@ ul { padding-left: 0; }
   .hero-kicker { margin-bottom: 14px; }
   .hero-4 .hero-meta { display: none; }
 }
+
+/* =====================================================================
+   ABOUT (Fixturbo home-5 "Know About Us" variant)
+   ===================================================================== */
+.about-thumb { padding-bottom: 120px; }
+.about-year-wrap {
+  position: relative; width: 190px; padding: 26px 20px 24px; text-align: center; border-radius: var(--radius);
+  background: linear-gradient(140deg, #0A3B2D 0%, var(--green) 60%, #145C3D 100%); color: var(--white);
+  box-shadow: var(--shadow); border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.about-year-wrap::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(204, 151, 34, 0.45); border-radius: 10px; pointer-events: none; }
+.about-year-wrap i { font-size: 26px; color: var(--gold); display: block; margin-bottom: 8px; }
+.about-year-title { font-family: var(--font-head); font-size: 46px; font-weight: 800; line-height: 1; color: var(--white); }
+.about-year-text { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); margin: 8px 0 0; }
+.about-content-wrap .checklist li { margin-bottom: 12px; font-size: 16px; }
+.about-more-btn .when-open { display: none; }
+.about-more-btn[aria-expanded="true"] .when-open { display: inline; }
+.about-more-btn[aria-expanded="true"] .when-closed { display: none; }
+.about-more-inner { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
+.about-more h4 { font-size: 1.25rem; }
+.pillars .eyebrow { margin-bottom: 22px; }
+.pillar-card {
+  height: 100%; padding: 30px 26px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset; position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.pillar-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform .35s ease; }
+.pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+.pillar-card:hover::before { transform: scaleY(1); }
+.pillar-card i { width: 46px; height: 46px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 19px; background: var(--green-tint); color: var(--green); margin-bottom: 18px; }
+.pillar-card h4 { font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; color: var(--green); }
+.pillar-card p { font-size: 15px; color: var(--muted); margin: 0; }
+@media (max-width: 767.98px) {
+  .about-year-wrap { width: 100%; }
+  .about-more-inner { margin-top: 40px; padding-top: 36px; }
+}
