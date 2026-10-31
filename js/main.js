@@ -10,18 +10,44 @@
 
     // Testimonials carousel (Slick)
     if ($.fn.slick) {
-      $('.testimonial-slide').slick({
+      var $slider = $('.testimonial-slide').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4500,
         dots: true,
+        appendDots: $('#testimonialDots'),
         arrows: false,
         pauseOnHover: true,
+        pauseOnFocus: true,
+        accessibility: true,
         responsive: [
           { breakpoint: 1200, settings: { slidesToShow: 2 } },
           { breakpoint: 768, settings: { slidesToShow: 1 } }
         ]
+      });
+      // Pause / resume control (WCAG 2.2.2)
+      var tPause = document.getElementById('testimonialPause');
+      if (tPause) {
+        tPause.addEventListener('click', function () {
+          var paused = tPause.getAttribute('aria-pressed') === 'true';
+          $slider.slick(paused ? 'slickPlay' : 'slickPause');
+          tPause.setAttribute('aria-pressed', String(!paused));
+          tPause.setAttribute('aria-label', paused ? 'Pause reviews carousel' : 'Play reviews carousel');
+          tPause.querySelector('i').className = paused ? 'fas fa-pause' : 'fas fa-play';
+        });
+      }
+    }
+
+    // Hero slideshow pause control (WCAG 2.2.2)
+    var hPause = document.getElementById('heroPause');
+    if (hPause) {
+      hPause.addEventListener('click', function () {
+        var hero = document.getElementById('hero');
+        var paused = hero.classList.toggle('is-paused');
+        hPause.setAttribute('aria-pressed', String(paused));
+        hPause.setAttribute('aria-label', paused ? 'Play background slideshow' : 'Pause background slideshow');
+        hPause.querySelector('i').className = paused ? 'fas fa-play' : 'fas fa-pause';
       });
     }
 

@@ -28,31 +28,32 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ============================================================
        HEADER  (Autozen)
        ============================================================ -->
   <header class="site-header-wrap">
-    <div class="topbar bg-green-deep d-none d-md-block">
+    <div class="topbar bg-green-deep d-none d-md-block" aria-label="Contact details">
       <div class="container-b">
         <ul>
-          <li><i class="fas fa-phone-alt"></i><a href="tel:+260974918077">+260 97 4918077</a></li>
-          <li><i class="fas fa-envelope"></i><a href="mailto:info@mwauluka.com">info@mwauluka.com</a></li>
-          <li><i class="fas fa-map-marker-alt"></i>Plot 25313, Mosi-oa-Tunya Road, Woodlands, Lusaka</li>
-          <li class="d-none d-lg-flex"><i class="far fa-clock"></i>Open daily</li>
+          <li><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+260974918077">+260 97 4918077</a></li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:info@mwauluka.com">info@mwauluka.com</a></li>
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Plot 25313, Mosi-oa-Tunya Road, Woodlands, Lusaka</li>
+          <li class="d-none d-lg-flex"><i class="far fa-clock" aria-hidden="true"></i>Open daily</li>
         </ul>
         <div class="socials">
-          <a href="https://www.facebook.com/" class="icon-social" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" class="icon-social" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/260974918077" class="icon-social" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/" class="icon-social" aria-label="Facebook" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/" class="icon-social" aria-label="Instagram" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://wa.me/260974918077" class="icon-social" aria-label="WhatsApp" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
 
     <div class="site-header">
-      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <nav class="navbar navbar-expand-lg" aria-label="Main">
         <div class="container-b">
-          <a class="navbar-brand" href="#top">
+          <a class="navbar-brand" href="#main">
             <img src="assets/brand/logos/mosi-o-tunya-car-care-horizontal-colour.svg" alt="Mosi O Tunya Car Care">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteNav"
@@ -67,7 +68,7 @@
             </div>
             <div class="offcanvas-body d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-end">
               <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#main">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#pricing">Packages</a></li>
@@ -80,7 +81,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
 
     <!-- ============================================================
          HERO  (Autozen: split headline, ghost title, Ken Burns slides)
@@ -88,11 +89,12 @@
     <!-- ============================================================
          HERO  (Fixturbo home-4)
          ============================================================ -->
-    <section class="hero hero-4" id="hero">
+    <section class="hero hero-4" id="hero" aria-label="Introduction">
       <div class="hero-4-bg" aria-hidden="true">
         <div class="hero-4-bg-img is-a" style="background-image: url('assets/img/hero/hero-detailing.jpg');"></div>
         <div class="hero-4-bg-img is-b" style="background-image: url('assets/img/hero/hero-wash.jpg');"></div>
       </div>
+      <button type="button" class="btn-icon-sm hero-pause" id="heroPause" aria-pressed="false" aria-label="Pause background slideshow"><i class="fas fa-pause" aria-hidden="true"></i></button>
       <div class="hero-4-shapes" aria-hidden="true">
         <svg class="shape shape1" viewBox="0 0 600 800" preserveAspectRatio="none"><polygon points="260,0 600,0 600,800 0,800" /></svg>
         <svg class="shape shape2" viewBox="0 0 800 800" preserveAspectRatio="none"><polygon points="520,0 800,0 800,800 180,800" /></svg>
@@ -112,10 +114,10 @@
                 <a href="#services" class="btn btn-outline-light-2">Explore Services</a>
               </div>
               <div class="hero-meta" data-aos="fade-up" data-aos-delay="450">
-                <div><i class="fas fa-tint"></i>Hand wash &amp; detailing</div>
-                <div><i class="fas fa-truck"></i>Fleet contracts</div>
-                <div><i class="fas fa-map-marker-alt"></i>Mobile call-outs</div>
-                <div><i class="fas fa-mug-hot"></i>On-site café</div>
+                <div><i class="fas fa-tint" aria-hidden="true"></i>Hand wash &amp; detailing</div>
+                <div><i class="fas fa-truck" aria-hidden="true"></i>Fleet contracts</div>
+                <div><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Mobile call-outs</div>
+                <div><i class="fas fa-mug-hot" aria-hidden="true"></i>On-site café</div>
               </div>
             </div>
           </div>
@@ -126,7 +128,7 @@
     <!-- ============================================================
          ABOUT  (Fixturbo home-5)
          ============================================================ -->
-    <section id="about" class="section bg-soft">
+    <section id="about" aria-label="About us" class="section bg-soft">
       <div class="container-b">
         <div class="row align-items-center g-5">
           <div class="col-12 col-xl-6">
@@ -151,22 +153,22 @@
               <div class="row g-4 align-items-center flex-row-reverse justify-content-end">
                 <div class="col-auto">
                   <div class="about-year-wrap">
-                    <i class="fas fa-car"></i>
+                    <i class="fas fa-car" aria-hidden="true"></i>
                     <div class="about-year-title"><span class="counter" data-count="6">0</span>+</div>
                     <p class="about-year-text">Service streams</p>
                   </div>
                 </div>
                 <div class="col-12 col-lg">
                   <ul class="checklist">
-                    <li><i class="fas fa-check-circle"></i>Paved, shaded wash bays in a secure, fenced facility</li>
-                    <li><i class="fas fa-check-circle"></i>Trained, customer-focused team</li>
-                    <li><i class="fas fa-check-circle"></i>Clear scope and pricing before work begins</li>
-                    <li><i class="fas fa-check-circle"></i>Lounge &amp; café while you wait</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i>Paved, shaded wash bays in a secure, fenced facility</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i>Trained, customer-focused team</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i>Clear scope and pricing before work begins</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i>Lounge &amp; café while you wait</li>
                   </ul>
                 </div>
               </div>
               <div class="mt-4">
-                <a class="btn btn-brand about-more-btn collapsed" data-bs-toggle="collapse" href="#aboutMore" role="button"
+                <button type="button" class="btn btn-brand about-more-btn collapsed" data-bs-toggle="collapse" data-bs-target="#aboutMore"
                   aria-expanded="false" aria-controls="aboutMore">
                   <span class="when-closed">Read More <i class="fas fa-arrow-right ms-2"></i></span>
                   <span class="when-open">Show Less <i class="fas fa-arrow-up ms-2"></i></span>
@@ -202,7 +204,7 @@
                   </div>
                 </div>
                 <div class="about-promise mt-4">
-                  <i class="fas fa-award"></i>
+                  <i class="fas fa-award" aria-hidden="true"></i>
                   <div>
                     <strong>Our promise: a cleaner vehicle, a better experience.</strong>
                     <span>Clean results. Careful service. A finish worth returning for.</span>
@@ -217,7 +219,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <div class="pillar-card">
                     <span class="pillar-bg" aria-hidden="true" style="background-image: url(assets/img/pillars/clean.jpg);"></span>
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                     <h3>Clean</h3>
                     <p>The visible result. A vehicle that looks refreshed, polished and ready to be seen, every time.</p>
                   </div>
@@ -225,7 +227,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <div class="pillar-card">
                     <span class="pillar-bg" aria-hidden="true" style="background-image: url(assets/img/pillars/care.jpg);"></span>
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
                     <h3>Care</h3>
                     <p>Attention and respect for your vehicle, with consistency in the small details that matter.</p>
                   </div>
@@ -233,7 +235,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <div class="pillar-card">
                     <span class="pillar-bg" aria-hidden="true" style="background-image: url(assets/img/pillars/elevate.jpg);"></span>
-                    <i class="fas fa-arrow-circle-up"></i>
+                    <i class="fas fa-arrow-circle-up" aria-hidden="true"></i>
                     <h3>Elevate</h3>
                     <p>A premium finish and a calmer, better experience than ordinary car washing.</p>
                   </div>
@@ -241,7 +243,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <div class="pillar-card">
                     <span class="pillar-bg" aria-hidden="true" style="background-image: url(assets/img/pillars/fleet.jpg);"></span>
-                    <i class="fas fa-city"></i>
+                    <i class="fas fa-city" aria-hidden="true"></i>
                     <h3>Corporate &amp; Fleet</h3>
                     <p>Scheduled washing, service logs and a dedicated contact for organisations with vehicles to maintain.</p>
                   </div>
@@ -253,7 +255,7 @@
       </div>
     </section>
 
-    <section id="services" class="section bg-sage-tint">
+    <section id="services" aria-label="Services" class="section bg-sage-tint">
       <div class="container-b">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-8 text-center">
@@ -268,62 +270,62 @@
         <div class="row g-4">
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="service-card">
-              <span class="num">01</span>
-              <div class="service-icon"><i class="fas fa-tint"></i></div>
+              <span class="num" aria-hidden="true">01</span>
+              <div class="service-icon"><i class="fas fa-tint" aria-hidden="true"></i></div>
               <h3><a href="#pricing">Car Wash &amp; Detailing</a></h3>
               <p>Hand wash and foam, pressure rinse, wheel and tyre care, interior vacuuming, waxing, polishing and
                 premium detailing options tailored to your vehicle.</p>
-              <a href="#pricing" class="link-arrow">View packages <i class="fas fa-arrow-right"></i></a>
+              <a href="#pricing" class="link-arrow">View packages <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <article class="service-card">
-              <span class="num">02</span>
-              <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <span class="num" aria-hidden="true">02</span>
+              <div class="service-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
               <h3><a href="#contact">Mobile Car Wash &amp; Call-Outs</a></h3>
               <p>Vehicle cleaning at your home, office or business premises, subject to location, water access and
                 booking arrangements.</p>
-              <a href="#contact" class="link-arrow">Request a call-out <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="link-arrow">Request a call-out <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
             <article class="service-card">
-              <span class="num">03</span>
-              <div class="service-icon"><i class="fas fa-truck"></i></div>
+              <span class="num" aria-hidden="true">03</span>
+              <div class="service-icon"><i class="fas fa-truck" aria-hidden="true"></i></div>
               <h3><a href="#contact">Fleet Washing Contracts</a></h3>
               <p>Planned washing schedules for company vehicles, car-hire businesses, NGOs and fleet operators, with
                 wash records and monthly invoicing where agreed.</p>
-              <a href="#contact" class="link-arrow">Discuss a contract <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="link-arrow">Discuss a contract <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="service-card">
-              <span class="num">04</span>
-              <div class="service-icon"><i class="far fa-building"></i></div>
+              <span class="num" aria-hidden="true">04</span>
+              <div class="service-icon"><i class="far fa-building" aria-hidden="true"></i></div>
               <h3><a href="#contact">Office Cleaning Services</a></h3>
               <p>Daily, weekly or monthly cleaning for offices and commercial premises: floors, desks, glass, kitchens
                 and washrooms, with after-hours scheduling available.</p>
-              <a href="#contact" class="link-arrow">Get a quote <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="link-arrow">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <article class="service-card">
-              <span class="num">05</span>
-              <div class="service-icon"><i class="fas fa-th"></i></div>
+              <span class="num" aria-hidden="true">05</span>
+              <div class="service-icon"><i class="fas fa-th" aria-hidden="true"></i></div>
               <h3><a href="#contact">Carpet Cleaning</a></h3>
               <p>Carpet vacuuming, shampooing and extraction, targeted stain treatment and deodorising for homes and
                 workplaces.</p>
-              <a href="#contact" class="link-arrow">Get a quote <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="link-arrow">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
           <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
             <article class="service-card">
-              <span class="num">06</span>
-              <div class="service-icon"><i class="fas fa-key"></i></div>
+              <span class="num" aria-hidden="true">06</span>
+              <div class="service-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
               <h3><a href="#contact">Car Sales Agency</a></h3>
               <p>Vehicle sales on behalf of owners, with clear communication and a professional customer experience
                 from listing to handover.</p>
-              <a href="#contact" class="link-arrow">Enquire <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="link-arrow">Enquire <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
         </div>
@@ -333,7 +335,7 @@
     <!-- ============================================================
          PACKAGES  (Fixturbo)
          ============================================================ -->
-    <section id="pricing" class="section bg-soft">
+    <section id="pricing" aria-label="Packages" class="section bg-soft">
       <div class="container-b">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-8 text-center">
@@ -350,16 +352,16 @@
             <div class="pricing-card">
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">From</span><span class="cur">K</span>120<span class="per">per vehicle</span></div>
-                <div class="pricing-icon"><i class="fas fa-tint"></i></div>
+                <div class="pricing-icon"><i class="fas fa-tint" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Essential Wash</h3>
                 <p class="tagline">A dependable everyday clean.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Exterior hand wash &amp; foam</li>
-                  <li><i class="fas fa-check-circle"></i>Wheel &amp; tyre cleaning</li>
-                  <li><i class="fas fa-check-circle"></i>Windows &amp; mirrors</li>
-                  <li><i class="fas fa-check-circle"></i>Quick dry &amp; finish</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Exterior hand wash &amp; foam</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Wheel &amp; tyre cleaning</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Windows &amp; mirrors</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Quick dry &amp; finish</li>
                 </ul>
               </div>
             </div>
@@ -368,16 +370,16 @@
             <div class="pricing-card">
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">From</span><span class="cur">K</span>180<span class="per">per vehicle</span></div>
-                <div class="pricing-icon"><i class="fas fa-star"></i></div>
+                <div class="pricing-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Premium Wash</h3>
                 <p class="tagline">Essential, plus the details that show.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Everything in Essential Wash</li>
-                  <li><i class="fas fa-check-circle"></i>Tyre dressing &amp; exterior finishing</li>
-                  <li><i class="fas fa-check-circle"></i>Spray wax protection</li>
-                  <li><i class="fas fa-check-circle"></i>Interior vacuum</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Everything in Essential Wash</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Tyre dressing &amp; exterior finishing</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Spray wax protection</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Interior vacuum</li>
                 </ul>
               </div>
             </div>
@@ -386,16 +388,16 @@
             <div class="pricing-card">
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">From</span><span class="cur">K</span>220<span class="per">per vehicle</span></div>
-                <div class="pricing-icon"><i class="fas fa-wind"></i></div>
+                <div class="pricing-icon"><i class="fas fa-wind" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Interior Refresh</h3>
                 <p class="tagline">A cabin that feels new again.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Full interior vacuum</li>
-                  <li><i class="fas fa-check-circle"></i>Dashboard &amp; door-panel wipe-down</li>
-                  <li><i class="fas fa-check-circle"></i>Boot cleaning &amp; mats</li>
-                  <li><i class="fas fa-check-circle"></i>Odour management &amp; fragrance</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Full interior vacuum</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Dashboard &amp; door-panel wipe-down</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Boot cleaning &amp; mats</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Odour management &amp; fragrance</li>
                 </ul>
               </div>
             </div>
@@ -405,16 +407,16 @@
               <span class="ribbon">Most complete</span>
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">From</span><span class="cur">K</span>450<span class="per">per vehicle</span></div>
-                <div class="pricing-icon"><i class="fas fa-gem"></i></div>
+                <div class="pricing-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Full Detail</h3>
                 <p class="tagline">Inside and out, every detail attended to.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Deep exterior clean &amp; polish</li>
-                  <li><i class="fas fa-check-circle"></i>Paint enhancement by assessment</li>
-                  <li><i class="fas fa-check-circle"></i>Complete interior detailing</li>
-                  <li><i class="fas fa-check-circle"></i>Headlight &amp; engine-bay care where suitable</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Deep exterior clean &amp; polish</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Paint enhancement by assessment</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Complete interior detailing</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Headlight &amp; engine-bay care where suitable</li>
                 </ul>
               </div>
             </div>
@@ -423,16 +425,16 @@
             <div class="pricing-card">
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">From</span><span class="cur">K</span>750<span class="per">per vehicle</span></div>
-                <div class="pricing-icon"><i class="fas fa-award"></i></div>
+                <div class="pricing-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Executive Care Package</h3>
                 <p class="tagline">Our highest standard of presentation.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Everything in Full Detail</li>
-                  <li><i class="fas fa-check-circle"></i>Leather &amp; upholstery care</li>
-                  <li><i class="fas fa-check-circle"></i>Premium wax &amp; protective finish</li>
-                  <li><i class="fas fa-check-circle"></i>Finishing fragrance &amp; final inspection</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Everything in Full Detail</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Leather &amp; upholstery care</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Premium wax &amp; protective finish</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Finishing fragrance &amp; final inspection</li>
                 </ul>
               </div>
             </div>
@@ -441,23 +443,23 @@
             <div class="pricing-card">
               <div class="pricing-price-wrap">
                 <div class="pricing-price"><span class="from">Tailored</span>Quote<span class="per">per contract</span></div>
-                <div class="pricing-icon"><i class="fas fa-truck"></i></div>
+                <div class="pricing-icon"><i class="fas fa-truck" aria-hidden="true"></i></div>
               </div>
               <div class="pricing-details">
                 <h3>Corporate Vehicle Care</h3>
                 <p class="tagline">For fleets, car-hire, NGOs and vehicle pools.</p>
                 <ul class="checklist">
-                  <li><i class="fas fa-check-circle"></i>Scheduled washes for agreed volumes</li>
-                  <li><i class="fas fa-check-circle"></i>Service log for accountability</li>
-                  <li><i class="fas fa-check-circle"></i>Dedicated contract contact</li>
-                  <li><i class="fas fa-check-circle"></i>Monthly invoicing where agreed</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Scheduled washes for agreed volumes</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Service log for accountability</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Dedicated contract contact</li>
+                  <li><i class="fas fa-check-circle" aria-hidden="true"></i>Monthly invoicing where agreed</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="pricing-foot" data-aos="fade-up">
-          <i class="fas fa-info-circle"></i>
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
           <div>Prices shown are indicative starting points. Specialist add-ons such as engine-bay degreasing, headlight
             restoration and paint correction are quoted after a quick assessment of your vehicle.</div>
         </div>
@@ -467,7 +469,7 @@
     <!-- ============================================================
          TESTIMONIALS  (Autozen)
          ============================================================ -->
-    <section id="testimonials" class="section bg-green">
+    <section id="testimonials" aria-label="Customer feedback" class="section bg-green">
       <div class="container-b">
         <div class="row align-items-end g-4 mb-5">
           <div class="col-12 col-xl-7" data-aos="fade-right">
@@ -477,7 +479,7 @@
           <div class="col-12 col-xl-5" data-aos="fade-left">
             <div class="rating-pill">
               <div class="avatars">
-                <span class="avatar">CM</span><span class="avatar">TB</span><span class="avatar">NP</span>
+                <span class="avatar" aria-hidden="true">CM</span><span class="avatar" aria-hidden="true">TB</span><span class="avatar" aria-hidden="true">NP</span>
               </div>
               <div>
                 <strong>5.0 average rating</strong>
@@ -486,65 +488,69 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-slide" data-aos="fade-up">
+        <div class="testimonial-slide" data-aos="fade-up" aria-label="Customer reviews" role="region">
           <div class="testimonial-box">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
             <p>“The car came back looking better than the day I bought it. The team explained what they would do before
               they started, and the price was exactly what they said.”</p>
             <div class="who">
-              <div class="d-flex"><span class="avatar">CM</span>
-                <div><strong class="name">Chanda M.</strong><span>Woodlands resident</span></div>
-              </div><i class="fas fa-quote-right"></i>
+              <div class="d-flex"><span class="avatar" aria-hidden="true">CM</span>
+                <div><strong class="name">Chanda M.</strong><span class="role">Woodlands resident</span></div>
+              </div><i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
           </div>
           <div class="testimonial-box">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
             <p>“We moved our pool vehicles onto a weekly schedule. The wash log makes it easy to account for every car,
               and the invoicing is clean and on time.”</p>
             <div class="who">
-              <div class="d-flex"><span class="avatar">TB</span>
-                <div><strong class="name">Thandiwe B.</strong><span>Fleet coordinator</span></div>
-              </div><i class="fas fa-quote-right"></i>
+              <div class="d-flex"><span class="avatar" aria-hidden="true">TB</span>
+                <div><strong class="name">Thandiwe B.</strong><span class="role">Fleet coordinator</span></div>
+              </div><i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
           </div>
           <div class="testimonial-box">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
             <p>“Calm, organised and professional. I had a coffee in the lounge while the interior refresh was done — the
               odour I had been fighting for months is gone.”</p>
             <div class="who">
-              <div class="d-flex"><span class="avatar">NP</span>
-                <div><strong class="name">Natasha P.</strong><span>Interior Refresh</span></div>
-              </div><i class="fas fa-quote-right"></i>
+              <div class="d-flex"><span class="avatar" aria-hidden="true">NP</span>
+                <div><strong class="name">Natasha P.</strong><span class="role">Interior Refresh</span></div>
+              </div><i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
           </div>
           <div class="testimonial-box">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
             <p>“They came to our office car park with their own water and equipment. Six vehicles done during the
               workday without any disruption to the team.”</p>
             <div class="who">
-              <div class="d-flex"><span class="avatar">KZ</span>
-                <div><strong class="name">Kelvin Z.</strong><span>Mobile call-out</span></div>
-              </div><i class="fas fa-quote-right"></i>
+              <div class="d-flex"><span class="avatar" aria-hidden="true">KZ</span>
+                <div><strong class="name">Kelvin Z.</strong><span class="role">Mobile call-out</span></div>
+              </div><i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
           </div>
           <div class="testimonial-box">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
             <p>“Finally a car wash in Lusaka that treats the vehicle with care. No swirl marks, no rushed finish, and
               the tyres still look dressed a week later.”</p>
             <div class="who">
-              <div class="d-flex"><span class="avatar">MS</span>
-                <div><strong class="name">Mwila S.</strong><span>Premium Wash</span></div>
-              </div><i class="fas fa-quote-right"></i>
+              <div class="d-flex"><span class="avatar" aria-hidden="true">MS</span>
+                <div><strong class="name">Mwila S.</strong><span class="role">Premium Wash</span></div>
+              </div><i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
           </div>
         </div>
+      <div class="carousel-controls">
+        <button type="button" class="btn-icon-sm" id="testimonialPause" aria-pressed="false" aria-label="Pause reviews carousel"><i class="fas fa-pause" aria-hidden="true"></i></button>
+        <div id="testimonialDots"></div>
+      </div>
       </div>
     </section>
 
     <!-- ============================================================
          CONTACT  (Autozen)
          ============================================================ -->
-    <section id="contact" class="section bg-soft">
+    <section id="contact" aria-label="Contact" class="section bg-soft">
       <div class="container-b">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-8 text-center">
@@ -559,24 +565,24 @@
             <div class="contact-card green">
               <h3 class="mb-4">Visit us in Woodlands</h3>
               <div class="contact-line">
-                <span class="icon-contact"><i class="fas fa-map-marker-alt"></i></span>
+                <span class="icon-contact"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
                 <div><small>Location</small><strong>Plot 25313, Mosi-oa-Tunya Road<br>Woodlands, Lusaka, Zambia</strong></div>
               </div>
               <div class="contact-line">
-                <span class="icon-contact"><i class="fas fa-phone-alt"></i></span>
+                <span class="icon-contact"><i class="fas fa-phone-alt" aria-hidden="true"></i></span>
                 <div><small>Call / WhatsApp</small><a href="tel:+260974918077">+260 97 4918077</a><br><a href="tel:+260971149719">+260 97 1149719</a></div>
               </div>
               <div class="contact-line">
-                <span class="icon-contact"><i class="fas fa-envelope"></i></span>
+                <span class="icon-contact"><i class="fas fa-envelope" aria-hidden="true"></i></span>
                 <div><small>Email</small><a href="mailto:info@mwauluka.com">info@mwauluka.com</a></div>
               </div>
               <div class="contact-line">
-                <span class="icon-contact"><i class="far fa-clock"></i></span>
+                <span class="icon-contact"><i class="far fa-clock" aria-hidden="true"></i></span>
                 <div><small>Opening hours</small><strong>Open daily</strong><br><span class="text-on-green" style="font-size:14px">Contact us to confirm current hours and availability.</span></div>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
                 <a href="https://wa.me/260974918077?text=Hello%20Mosi%20O%20Tunya%20Car%20Care%2C%20I%27d%20like%20to%20book%20a%20wash."
-                  class="btn btn-gold" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>WhatsApp us</a>
+                  class="btn btn-gold" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-whatsapp me-2"></i>WhatsApp us</a>
                 <a href="tel:+260974918077" class="btn btn-outline-light-2"><i class="fas fa-phone-alt me-2"></i>Call now</a>
               </div>
             </div>
@@ -585,7 +591,7 @@
             <div class="map-wrap h-100" id="mapWrap">
               <div class="map-facade">
                 <div class="map-facade-inner">
-                  <span class="map-pin"><i class="fas fa-map-marker-alt"></i></span>
+                  <span class="map-pin"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
                   <h3>Plot 25313, Mosi-oa-Tunya Road</h3>
                   <p>Woodlands, Lusaka, Zambia</p>
                   <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
@@ -606,7 +612,7 @@
   <!-- ============================================================
        FOOTER  (Autozen)
        ============================================================ -->
-  <footer class="footer bg-green-deep">
+  <footer class="footer bg-green-deep" aria-label="Site footer">
     <div class="container-b">
       <div class="row g-5">
         <div class="col-12 col-md-6 col-xl-4">
@@ -616,40 +622,40 @@
           <p class="mt-4">Premium car care that delivers visible cleanliness, careful service and an elevated finish, for
             individual motorists, corporate clients and fleet operators in Lusaka.</p>
           <div class="socials mt-3">
-            <a href="https://www.facebook.com/" class="icon-social" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/" class="icon-social" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/260974918077" class="icon-social" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" class="icon-social" aria-label="Facebook" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" class="icon-social" aria-label="Instagram" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://wa.me/260974918077" class="icon-social" aria-label="WhatsApp" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
           </div>
           <div class="footer-tagline">Clean<span class="sep">•</span>Care<span class="sep">•</span>Elevate</div>
         </div>
         <div class="col-6 col-md-6 col-xl-2">
           <h4>Quick links</h4>
           <ul>
-            <li><a href="#top"><i class="fas fa-chevron-right"></i>Home</a></li>
-            <li><a href="#about"><i class="fas fa-chevron-right"></i>About us</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Services</a></li>
-            <li><a href="#pricing"><i class="fas fa-chevron-right"></i>Packages</a></li>
-            <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
+            <li><a href="#main"><i class="fas fa-chevron-right" aria-hidden="true"></i>Home</a></li>
+            <li><a href="#about"><i class="fas fa-chevron-right" aria-hidden="true"></i>About us</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Services</a></li>
+            <li><a href="#pricing"><i class="fas fa-chevron-right" aria-hidden="true"></i>Packages</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i>Contact</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-6 col-xl-3">
           <h4>Services</h4>
           <ul>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Car Wash &amp; Detailing</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Mobile Call-Outs</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Fleet Washing Contracts</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Office Cleaning</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Carpet Cleaning</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i>Car Sales Agency</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Car Wash &amp; Detailing</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Mobile Call-Outs</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Fleet Washing Contracts</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Office Cleaning</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Carpet Cleaning</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i>Car Sales Agency</a></li>
           </ul>
         </div>
         <div class="col-12 col-md-6 col-xl-3">
           <h4>Contact</h4>
           <ul class="footer-contact">
-            <li><i class="fas fa-map-marker-alt"></i><span>Plot 25313, Mosi-oa-Tunya Road,<br>Woodlands, Lusaka, Zambia</span></li>
-            <li><i class="fas fa-phone-alt"></i><span><a href="tel:+260974918077">+260 97 4918077</a><br><a href="tel:+260971149719">+260 97 1149719</a></span></li>
-            <li><i class="fas fa-envelope"></i><a href="mailto:info@mwauluka.com">info@mwauluka.com</a></li>
-            <li><i class="far fa-clock"></i><span>Open daily — call to confirm hours</span></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Plot 25313, Mosi-oa-Tunya Road,<br>Woodlands, Lusaka, Zambia</span></li>
+            <li><i class="fas fa-phone-alt" aria-hidden="true"></i><span><a href="tel:+260974918077">+260 97 4918077</a><br><a href="tel:+260971149719">+260 97 1149719</a></span></li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:info@mwauluka.com">info@mwauluka.com</a></li>
+            <li><i class="far fa-clock" aria-hidden="true"></i><span>Open daily — call to confirm hours</span></li>
           </ul>
         </div>
       </div>
@@ -662,7 +668,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/260974918077" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/260974918077" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener" title="Opens in a new tab"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 
   <!-- Vendor JS -->
   <script src="js/vendor/jquery.min.js"></script>

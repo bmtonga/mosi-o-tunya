@@ -45,6 +45,14 @@ assets/img/                hero, about, pillars photography
 - Colours come only from the `:root` tokens; gold is an accent, never a surface.
 - Dependencies are vendored locally; the only external requests are Google Fonts and the Google Maps embed.
 
+## Accessibility
+
+Audited against WCAG 2.1 AA (contrast computed on rendered colours, keyboard walk-through, landmark/ARIA review):
+skip link; one `h1`, labelled sections and landmarks; visible 3 px focus ring on every control; decorative icons
+`aria-hidden`; text contrast ≥ 4.5:1 (≥ 3:1 large) on all surfaces; carousel and hero slideshow pause on hover/focus
+and have pause buttons; `prefers-reduced-motion` honoured; Read More is a real `<button>`; targets ≥ 24 px.
+Re-check contrast whenever a brand colour token changes.
+
 ## Status / to-do
 
 - [ ] **Replace demonstration imagery.** About images are brand-concept renders from the identity presentation (some show the earlier "Car Spa" descriptor). Swap for real photographs of the Woodlands facility.
