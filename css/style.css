@@ -138,12 +138,13 @@ ul { padding-left: 0; }
 .title-area .lead-copy { font-size: 1.1rem; color: var(--muted); max-width: 640px; margin: 18px 0 0; }
 
 /* Buttons */
-.btn { font-family: var(--font-head); font-weight: 700; font-size: 15px; border-radius: 999px; padding: 14px 28px; letter-spacing: 0.01em; box-shadow: none; transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
-.btn i { font-size: 0.95em; }
+.btn { font-family: var(--font-head); font-weight: 700; font-size: 15px; border-radius: 999px; padding: 14px 28px; letter-spacing: 0.01em; box-shadow: none; transition: background-color .28s ease, border-color .28s ease, color .28s ease, transform .28s ease, box-shadow .28s ease; }
+.btn i { font-size: 0.95em; display: inline-block; transition: transform .28s ease; }
+.btn:hover .fa-arrow-right { transform: translateX(4px); }
 .btn-brand { background: var(--green); color: var(--white); border: 1px solid var(--green); box-shadow: 0 6px 16px rgba(6, 76, 59, 0.14); }
-.btn-brand:hover, .btn-brand:focus { background: var(--green-soft); border-color: var(--green-soft); color: var(--white); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(6, 76, 59, 0.2); }
+.btn-brand:hover, .btn-brand:focus { background: var(--green-soft); border-color: var(--green-soft); color: var(--white); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(6, 76, 59, 0.24); }
 .btn-gold { background: var(--gold); color: var(--green-deep); border: 1px solid var(--gold); box-shadow: 0 6px 16px rgba(6, 76, 59, 0.14); }
-.btn-gold:hover, .btn-gold:focus { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(6, 76, 59, 0.2); }
+.btn-gold:hover, .btn-gold:focus { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(6, 76, 59, 0.24); }
 .btn-outline-light-2 { background: rgba(255, 255, 255, 0.06); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .btn-outline-light-2:hover { background: var(--white); color: var(--green); border-color: var(--white); }
 
@@ -222,9 +223,8 @@ ul { padding-left: 0; }
 .navbar .container-b { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .navbar-brand img { height: 54px; width: auto; display: block; }
 .navbar-nav { gap: 10px; }
-.navbar .nav-link { font-family: var(--font-head); font-weight: 600; font-size: 15.5px; color: var(--ink) !important; padding: 10px 16px !important; position: relative; border-radius: 999px; }
-.navbar .nav-link:hover { background: rgba(6, 76, 59, 0.06); }
-.navbar .nav-link::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 2px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.navbar .nav-link { font-family: var(--font-head); font-weight: 600; font-size: 15.5px; color: var(--ink) !important; padding: 10px 16px !important; position: relative; border-radius: 0; }
+.navbar .nav-link::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 2px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .28s ease; }
 .navbar .nav-link:hover::after, .navbar .nav-link.active::after { transform: scaleX(1); }
 .navbar .nav-link.active { color: var(--green) !important; }
 .navbar-toggler { border: 0; padding: 6px; }
@@ -535,7 +535,6 @@ ul { padding-left: 0; }
   .offcanvas .navbar-nav { gap: 2px; }
   .offcanvas .nav-link { font-size: 18px; padding: 14px 0 !important; border-bottom: 1px solid var(--line); border-radius: 0; }
   .offcanvas .nav-link.active { color: var(--green) !important; }
-  .offcanvas .nav-link:hover { background: transparent; }
   .offcanvas .nav-link::after { display: none; }
   .offcanvas .btn-close { opacity: 1; }
   .hero-4-bg-img.is-a { background-position: 70% 20%; }
