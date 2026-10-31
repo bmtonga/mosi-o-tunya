@@ -167,24 +167,18 @@ ul { padding-left: 0; }
 .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--sage); color: var(--green-deep); font-family: var(--font-head); font-weight: 800; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; }
 
 /* Carousel controls */
-.carousel-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 28px; }
-.carousel-controls .slick-dots { margin: 0; }
 .btn-icon-sm {
   width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 14px;
   color: var(--white); background: var(--glass-bg); border: 1px solid var(--glass-border); transition: background .25s;
 }
 .btn-icon-sm:hover { background: var(--glass-bg-strong); color: var(--white); }
 .hero-pause { position: absolute; right: 24px; bottom: 24px; z-index: 4; }
+.carousel-pause { position: absolute; right: 24px; top: 24px; z-index: 4; }
+/* keyboard-only controls: invisible until focused (Bootstrap .visually-hidden-focusable) */
+.visually-hidden-focusable:focus-visible { position: absolute !important; width: 40px !important; height: 40px !important; clip: auto !important; overflow: visible !important; white-space: normal !important; }
 .hero-4.is-paused .hero-4-bg-img { animation-play-state: paused; }
-.slick-slider.is-paused { }
 /* Slick dots */
 .slick-list { margin: 0 -12px; }
-.slick-slider .slick-dots { display: flex; justify-content: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.slick-slider .slick-dots li { width: auto; margin: 0; }
-.slick-slider .slick-dots button { position: relative; width: 28px; height: 24px; border: 0; background: transparent; font-size: 0; padding: 0; }
-.slick-slider .slick-dots button::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 3px; margin-top: -1.5px; border-radius: 2px; background: rgba(255, 255, 255, 0.45); transition: background .2s; }
-.slick-slider .slick-dots .slick-active button::before { background: #E4BA55; }
-.slick-slider .slick-dots button:focus-visible { outline: 2px solid #E4BA55; outline-offset: 2px; }
 
 /* Floating WhatsApp */
 .wa-float {
