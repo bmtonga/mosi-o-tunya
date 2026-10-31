@@ -690,3 +690,25 @@ ul { padding-left: 0; }
   .about-year-wrap { width: 100%; }
   .about-more-inner { margin-top: 40px; padding-top: 36px; }
 }
+
+/* Pillar cards: photo reveal on hover */
+.pillar-card { isolation: isolate; }
+.pillar-card .pillar-bg {
+  position: absolute; inset: 0; z-index: 0; border-radius: inherit; pointer-events: none;
+  background-size: cover; background-position: center; opacity: 0; transform: scale(1.06);
+  transition: opacity .45s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.pillar-card .pillar-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 31, 24, 0.18) 0%, rgba(7, 31, 24, 0.55) 45%, rgba(7, 31, 24, 0.9) 100%); }
+.pillar-card:hover .pillar-bg, .pillar-card:focus-within .pillar-bg { opacity: 1; transform: scale(1); }
+.pillar-card i, .pillar-card h4, .pillar-card p { transition: color .35s ease, background .35s ease, border-color .35s ease; position: relative; z-index: 1; }
+.pillar-card::before { z-index: 2; }
+.pillar-card:hover { border-color: rgba(255, 255, 255, 0.18); }
+.pillar-card:hover i { background: rgba(255, 255, 255, 0.14); color: var(--gold); border: 1px solid rgba(255, 255, 255, 0.22); }
+.pillar-card:hover h4 { color: var(--white); }
+.pillar-card:hover p { color: rgba(255, 255, 255, 0.86); }
+@media (hover: none) {
+  .pillar-card .pillar-bg { opacity: 1; transform: none; }
+  .pillar-card i { background: rgba(255, 255, 255, 0.14); color: var(--gold); }
+  .pillar-card h4 { color: var(--white); }
+  .pillar-card p { color: rgba(255, 255, 255, 0.86); }
+}
