@@ -38,6 +38,35 @@
       }
     }
 
+    // Team carousel (Slick)
+    if ($.fn.slick && $('.team-slider').length) {
+      var $team = $('.team-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        dots: false,
+        arrows: false,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        accessibility: true,
+        responsive: [
+          { breakpoint: 992, settings: { slidesToShow: 2 } },
+          { breakpoint: 576, settings: { slidesToShow: 1 } }
+        ]
+      });
+      var teamPause = document.getElementById('teamPause');
+      if (teamPause) {
+        teamPause.addEventListener('click', function () {
+          var paused = teamPause.getAttribute('aria-pressed') === 'true';
+          $team.slick(paused ? 'slickPlay' : 'slickPause');
+          teamPause.setAttribute('aria-pressed', String(!paused));
+          teamPause.setAttribute('aria-label', paused ? 'Pause team carousel' : 'Play team carousel');
+          teamPause.querySelector('i').className = paused ? 'fas fa-pause' : 'fas fa-play';
+        });
+      }
+    }
+
     // Hero slideshow pause control (WCAG 2.2.2)
     var hPause = document.getElementById('heroPause');
     if (hPause) {

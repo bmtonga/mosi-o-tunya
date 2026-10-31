@@ -15,6 +15,7 @@ The site combines two licensed templates into one consistent design, restyled to
 | About "Know About Us" (image stack, counter, checklist, Read More expanding story + Clean/Care/Elevate pillars) | Fixturbo home-5 |
 | Services (6 cards) | Fixturbo |
 | Packages (6 pricing cards, no CTA) | Fixturbo |
+| Team carousel (photo card, name, role, socials) | Fixturbo home-5 |
 | Testimonials carousel | Autozen |
 | Contact info + map | Autozen |
 | Footer | Autozen |
@@ -57,6 +58,7 @@ Re-check contrast whenever a brand colour token changes.
 
 - [ ] **Facility photography.** Hero and About use stock photos; replace with real photographs of the Woodlands facility when available.
 - [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing`.
+- [ ] **Team section.** Placeholder names, roles and avatars in `#team`; add real staff photos (square, ≥ 600 px) to `assets/img/team/`.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
 - [ ] Add Instagram URL (Facebook is linked; Instagram still points to instagram.com).
