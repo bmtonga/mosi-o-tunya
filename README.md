@@ -17,7 +17,7 @@ The site combines two licensed templates into one consistent design, restyled to
 | Packages (6 pricing cards, no CTA) | Fixturbo |
 | Team carousel (photo card, name, role, socials) — commented out until staff photos are available | Fixturbo home-5 |
 | Testimonials carousel | Autozen |
-| Contact info + map | Autozen |
+| Contact page (own page: banner, info card + map) | Autozen |
 | Footer | Autozen |
 
 Brand tokens live at the top of `css/style.css`:
@@ -27,7 +27,8 @@ Fonts: Manrope (headings), Inter (body) via Google Fonts.
 ## Structure
 
 ```
-index.html
+index.html                 homepage
+contact.html               contact page (banner, details card, map facade)
 css/style.css              site styles (own)
 css/vendor/                bootstrap 5.3.3, aos 2.3, slick 1.8, fontawesome 5.15 (local)
 css/webfonts/              Font Awesome webfonts (woff2 + woff only)

@@ -543,6 +543,17 @@ ul { padding-left: 0; }
 .btn-outline-brand:hover { background: transparent; color: var(--green); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(6, 76, 59, 0.14); }
 
 /* ---------------------------------------------------------------------
+   11b. Inner-page banner (contact.html)
+   ------------------------------------------------------------------- */
+.page-banner { padding: 72px 0 64px; }
+.page-banner h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 12px; }
+.page-banner p { font-size: 1.1rem; max-width: 640px; }
+.crumbs { display: flex; gap: 10px; align-items: center; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); margin-bottom: 18px; }
+.crumbs a { color: var(--gold) !important; }
+.crumbs span[aria-hidden] { opacity: .5; }
+@media (max-width: 767.98px) { .page-banner { padding: 48px 0 44px; } }
+
+/* ---------------------------------------------------------------------
    12. Footer (Autozen)
    ------------------------------------------------------------------- */
 .footer { position: relative; padding: 90px 0 0; }

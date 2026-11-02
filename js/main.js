@@ -115,7 +115,9 @@
     // Active nav link on scroll
     var sections = $('main section[id]');
     var navLinks = $('.navbar .nav-link');
+    var isHome = $('#hero').length > 0;
     function setActive() {
+      if (!isHome) return;
       var pos = $(window).scrollTop() + 140;
       var current = 'top';
       sections.each(function () {
