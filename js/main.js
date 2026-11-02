@@ -104,6 +104,8 @@
       document.documentElement.style.setProperty('--header-h', headerWrap.offsetHeight + 'px');
       var tb = document.querySelector('.topbar');
       document.documentElement.style.setProperty('--topbar-h', (tb ? tb.offsetHeight : 0) + 'px');
+      var nav = document.querySelector('.site-header');
+      document.documentElement.style.setProperty('--nav-h', (nav ? nav.offsetHeight : 0) + 'px');
     }
     setHeaderHeight();
     $(window).on('resize', setHeaderHeight);
@@ -128,10 +130,33 @@
     $(window).on('scroll', setActive);
     setActive();
 
-    // Close offcanvas when a link is clicked
-    $('#siteNav .nav-link, #siteNav .btn').on('click', function () {
-      var oc = bootstrap.Offcanvas.getInstance(document.getElementById('siteNav'));
-      if (oc) oc.hide();
+    // Mobile drawer links: close the drawer first, then navigate. Bootstrap locks body
+    // scrolling while the offcanvas is open/closing, which can swallow an in-page jump.
+    var navEl = document.getElementById('siteNav');
+    function scrollToHash(hash) {
+      if (hash === '#main' || hash === '#top') { window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, '', ' '); return; }
+      var target = hash && document.querySelector(hash);
+      if (!target) return;
+      var offset = (document.querySelector('.site-header') || {}).offsetHeight || 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', hash);
+    }
+    $('#siteNav .nav-link, #siteNav .btn').on('click', function (e) {
+      var href = this.getAttribute('href') || '';
+      var oc = bootstrap.Offcanvas.getInstance(navEl);
+      var isOpen = navEl.classList.contains('show');
+      if (!isOpen || !oc) { // desktop: let the browser handle it, except Home → true top
+        if (href === '#main') { e.preventDefault(); scrollToHash(href); }
+        return;
+      }
+      if (href.charAt(0) === '#' && document.querySelector(href)) {
+        e.preventDefault();
+        $(navEl).one('hidden.bs.offcanvas', function () { scrollToHash(href); });
+        oc.hide();
+      } else {
+        oc.hide(); // real page link (contact.html): browser navigates normally
+      }
     });
 
     // Count-up for the About counter (runs once when it scrolls into view)

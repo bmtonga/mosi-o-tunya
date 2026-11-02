@@ -60,8 +60,10 @@
 /* ---------------------------------------------------------------------
    2. Base
    ------------------------------------------------------------------- */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; } /* no scroll-padding: it makes focus moves (offcanvas focus trap) drag the page; sections use scroll-margin-top instead */
 html, body { overflow-x: clip; }
+main section[id] { scroll-margin-top: calc(var(--nav-h, 92px) + 8px); }
+#main { scroll-margin-top: 0; }
 :focus { outline: none; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 .btn:focus-visible, .navbar .nav-link:focus-visible, .btn-icon-sm:focus-visible { outline: 3px solid var(--gold) !important; outline-offset: 3px; box-shadow: none !important; }
