@@ -246,7 +246,7 @@ ul { padding-left: 0; }
   animation: heroFade 24s ease-in-out infinite; will-change: opacity, transform;
 }
 /* three slides, 8 s each: a 0–8, b 8–16, c 16–24 */
-.hero-4-bg-img.is-a { background-position: right 22%; }
+.hero-4-bg-img.is-a { background-position: 80% 30%; }
 .hero-4-bg-img.is-b { background-position: 72% 30%; animation-delay: -16s; }
 .hero-4-bg-img.is-c { background-position: 70% 35%; animation-delay: -8s; }
 @keyframes heroFade {
@@ -624,7 +624,7 @@ html:not(.js-aos) [data-aos] { opacity: 1 !important; transform: none !important
   .offcanvas .nav-link.active { color: var(--green) !important; }
   .offcanvas .nav-link::after { display: none; }
   .offcanvas .btn-close { opacity: 1; }
-  .hero-4-bg-img.is-a { background-position: 70% 20%; }
+  .hero-4-bg-img.is-a { background-position: 75% 30%; }
   .hero-4-bg-img.is-b { background-position: 68% 30%; }
   .hero-4-bg-img.is-c { background-position: 66% 35%; }
   .hero-4::before { background: linear-gradient(90deg, #071F18 0%, rgba(7, 31, 24, 0.92) 45%, rgba(12, 66, 49, 0.6) 100%); }
