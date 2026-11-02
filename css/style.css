@@ -616,6 +616,9 @@ html:not(.js-aos) [data-aos] { opacity: 1 !important; transform: none !important
   .about-thumb { padding: 0 0 110px 50px; margin: 0 auto 40px; max-width: 560px; }
   .pricing-card { flex-direction: column; gap: 24px; }
   .pricing-price-wrap { flex-direction: row; align-items: center; justify-content: space-between; flex: none; }
+  /* Featured card: the 'Most complete' badge sits where the icon would be, so drop the icon */
+  .pricing-card.featured .pricing-icon { display: none; }
+  .pricing-card.featured .ribbon { top: auto; bottom: auto; }
 }
 @media (max-width: 767.98px) {
   body { font-size: 16px; }
