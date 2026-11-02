@@ -14,9 +14,9 @@ The site combines two licensed templates into one consistent design, restyled to
 | Hero (full-bleed photo, left scrim, angled shapes) | Fixturbo home-4 |
 | About "Know About Us" (image stack, counter, checklist, Read More expanding story + Clean/Care/Elevate pillars) | Fixturbo home-5 |
 | Services (6 cards) | Fixturbo |
+| Testimonials carousel | Autozen |
 | Packages (6 pricing cards, no CTA) | Fixturbo |
 | Team carousel (photo card, name, role, socials) — commented out until staff photos are available | Fixturbo home-5 |
-| Testimonials carousel | Autozen |
 | Contact page (own page: banner, info card + map) | Autozen |
 | Footer | Autozen |
 
