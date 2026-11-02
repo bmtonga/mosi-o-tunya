@@ -98,6 +98,14 @@ a:hover { color: var(--gold-dark); }
 img { max-width: 100%; }
 ul { padding-left: 0; }
 
+/* Scrollbars: brand green on soft white (Firefox + WebKit) */
+html { scrollbar-color: var(--green) var(--soft); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--soft); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 999px; border: 2px solid var(--soft); }
+::-webkit-scrollbar-thumb:hover { background: var(--green-soft); }
+::selection { background: var(--gold); color: var(--green-deep); }
+
 /* ---------------------------------------------------------------------
    3. Layout & utilities
    ------------------------------------------------------------------- */
