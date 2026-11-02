@@ -280,12 +280,11 @@ ul { padding-left: 0; }
 .hero-copy { max-width: 560px; font-size: 1.08rem; color: rgba(255, 255, 255, 0.86); margin-bottom: 28px; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .hero-meta div {
-  display: flex; align-items: center; gap: 12px; padding: 10px 18px 10px 14px; border-radius: 999px;
+  display: flex; align-items: center; gap: 10px; padding: 6px 0; margin-right: 20px;
   color: rgba(255, 255, 255, 0.9); font-size: 14.5px;
-  background: var(--glass-bg);
-  transition: background .25s ease, transform .25s ease;
+  transition: transform .25s ease;
 }
-.hero-meta div:hover { background: var(--glass-bg-strong); transform: translateY(-1px); }
+.hero-meta div:hover { transform: translateY(-1px); }
 .hero-meta i { color: var(--gold); font-size: 16px; }
 
 .hero-4-shapes { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
