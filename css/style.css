@@ -278,9 +278,9 @@ ul { padding-left: 0; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-copy { max-width: 560px; font-size: 1.08rem; color: rgba(255, 255, 255, 0.86); margin-bottom: 28px; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.hero-meta { position: absolute; right: 100px; bottom: 22px; z-index: 3; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 0; }
 .hero-meta div {
-  display: flex; align-items: center; gap: 10px; padding: 6px 0; margin-right: 20px;
+  display: flex; align-items: center; gap: 10px; padding: 6px 0; margin-left: 24px;
   color: rgba(255, 255, 255, 0.9); font-size: 14.5px;
   transition: transform .25s ease;
 }
@@ -630,10 +630,11 @@ html:not(.js-aos) [data-aos] { opacity: 1 !important; transform: none !important
   .container-b { padding: 0 18px; }
   .navbar-brand img { height: 46px; }
   .hero-4 { min-height: 0; }
-  .hero-style4 { padding: 40px 0 44px; }
+  .hero-style4 { padding: 40px 0 72px; }
   .hero-4::before { background: linear-gradient(180deg, rgba(7, 31, 24, 0.82) 0%, rgba(7, 31, 24, 0.9) 100%); }
   .hero-4-shapes .shape3 { display: none; }
-  .hero-meta { gap: 10px; }
+  .hero-meta { right: 18px; bottom: 16px; left: 18px; justify-content: flex-end; }
+  .hero-meta div { margin-left: 16px; font-size: 13.5px; }
   .hero-meta div { font-size: 13.5px; padding: 8px 14px 8px 12px; }
   .about-thumb { padding: 0 0 90px 30px; }
   .about-img-2 { width: 62%; }
