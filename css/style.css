@@ -489,7 +489,7 @@ ul { padding-left: 0; }
    10. Testimonials (Autozen slick carousel, glass cards)
    ------------------------------------------------------------------- */
 .testimonial-box {
-  display: flex !important; flex-direction: column; min-height: 300px; padding: 32px; margin: 0 12px;
+  display: flex !important; flex-direction: column; height: 100%; min-height: 320px; padding: 32px; margin: 0 12px;
   border-radius: var(--radius); background: var(--glass-bg); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2); backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
   transition: background .3s ease, border-color .3s ease, transform .3s ease;
@@ -497,6 +497,9 @@ ul { padding-left: 0; }
 .testimonial-box:hover { background: var(--glass-bg-strong); border-color: rgba(255, 255, 255, 0.24); transform: translateY(-3px); }
 .testimonial-box .stars { color: var(--gold); display: flex; gap: 4px; font-size: 14px; margin-bottom: 20px; }
 .testimonial-box p { color: rgba(255, 255, 255, 0.88); font-size: 17px; line-height: 1.6; flex: 1; }
+.testimonial-slide .slick-track { display: flex; }
+.testimonial-slide .slick-slide { height: auto; }
+.testimonial-slide .slick-slide > div { height: 100%; }
 .testimonial-box .who { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-on-green); }
 .testimonial-box .who .d-flex { gap: 14px; align-items: center; }
 .testimonial-box .name { display: block; color: var(--white); font-family: var(--font-head); font-size: 1rem; }
