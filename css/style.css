@@ -570,6 +570,11 @@ html { scrollbar-color: var(--green) var(--soft); scrollbar-width: thin; }
    11d. Service pages (Fixturbo service-details + Autozen details card)
    ------------------------------------------------------------------- */
 .page-banner .eyebrow { margin-bottom: 14px; }
+.page-banner.has-watermark { position: relative; overflow: hidden; }
+.page-banner .banner-wm { position: absolute; inset: 0; background-position: center 40%; background-size: cover; background-repeat: no-repeat; opacity: 0.22; mix-blend-mode: luminosity; filter: contrast(1.15) grayscale(1); pointer-events: none; } /* inline background-image: url() in a CSS var resolves against the stylesheet, not the page */
+.page-banner.has-watermark::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6, 76, 59, 0.92) 0%, rgba(6, 76, 59, 0.7) 50%, rgba(6, 76, 59, 0.45) 100%); pointer-events: none; }
+.page-banner.has-watermark .container-b { position: relative; z-index: 1; }
+@media (max-width: 767.98px) { .page-banner.has-watermark::after { background: rgba(6, 76, 59, 0.82); } }
 .svc { padding: 80px 0 100px; }
 .svc-hero { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 16 / 9; margin-bottom: 36px; background: var(--green-tint); }
 .svc-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
