@@ -18,6 +18,7 @@ The site combines two licensed templates into one consistent design, restyled to
 | Packages (6 pricing cards, no CTA) | Fixturbo |
 | Team carousel (photo card, name, role, socials) — commented out until staff photos are available | Fixturbo home-5 |
 | Contact page (own page: banner, info card + map) | Autozen |
+| Legal pages (Privacy, Terms, Cookies): banner + sticky TOC + article | Own (minimal) |
 | Footer | Autozen |
 
 Brand tokens live at the top of `css/style.css`:
@@ -29,6 +30,9 @@ Fonts: Manrope (headings), Inter (body) via Google Fonts.
 ```
 index.html                 homepage
 contact.html               contact page (banner, details card, map facade)
+privacy-policy.html        legal pages: same shell as contact.html, sticky table of contents,
+terms-of-use.html            no AOS/Slick; content generated from scratch, marked with
+cookie-policy.html           <!-- CONFIRM --> comments where the company must verify facts
 css/style.css              site styles (own)
 css/vendor/                bootstrap 5.3.3, aos 2.3, slick 1.8, fontawesome 5.15 (local)
 css/webfonts/              Font Awesome webfonts (woff2 + woff only)
@@ -63,4 +67,10 @@ Re-check contrast whenever a brand colour token changes.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
 - [ ] Add Instagram URL (Facebook is linked; Instagram still points to instagram.com).
-- [ ] Terms & Privacy pages.
+- [ ] **Legal pages — company confirmation / legal review.** `privacy-policy.html`, `terms-of-use.html` and `cookie-policy.html` are drafted from the site as built (no forms, no cookies of its own, Google Fonts + click-to-load Google Maps). Items marked `<!-- CONFIRM -->` in the HTML need checking before launch:
+  - Data Protection Act, 2021: whether the company is registered as a data controller with the Office of the Data Protection Commissioner / has a Data Protection Officer.
+  - Hosting and email providers (and where they store data) for the "sharing" and "international transfers" sections.
+  - Retention periods (12 months for enquiries; statutory period for financial records).
+  - Whether CCTV or vehicle photographs are used at the premises.
+  - Whether separate service/fleet contract terms exist to link from the Terms of Use.
+  - Re-audit the Cookie Policy if analytics, a booking form or any embed is added later: it currently states, truthfully, that the site sets no cookies and so needs no consent banner.

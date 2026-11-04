@@ -200,6 +200,24 @@
       });
     }
 
+    // Legal pages: highlight the current section in the sticky table of contents
+    var tocLinks = document.querySelectorAll('.legal-toc a[href^="#"]');
+    if (tocLinks.length) {
+      var tocMap = {};
+      tocLinks.forEach(function (a) { tocMap[a.getAttribute('href').slice(1)] = a; });
+      var headings = Object.keys(tocMap).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      var updateToc = function () {
+        var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 92;
+        var current = headings[0];
+        headings.forEach(function (h) { if (h.getBoundingClientRect().top <= navH + 40) current = h; });
+        tocLinks.forEach(function (a) { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
+        if (current && tocMap[current.id]) { tocMap[current.id].classList.add('is-active'); tocMap[current.id].setAttribute('aria-current', 'true'); }
+      };
+      window.addEventListener('scroll', updateToc, { passive: true });
+      window.addEventListener('resize', updateToc);
+      updateToc();
+    }
+
     // Map facade: the Google Maps embed is only fetched on request
     var loadMap = document.getElementById('loadMap');
     if (loadMap) {
