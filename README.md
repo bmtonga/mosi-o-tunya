@@ -13,7 +13,8 @@ The site combines two licensed templates into one consistent design, restyled to
 | Top bar, navbar, offcanvas menu | Autozen |
 | Hero (full-bleed photo, left scrim, angled shapes) | Fixturbo home-4 |
 | About "Know About Us" (image stack, counter, checklist, Read More expanding story + Clean/Care/Elevate pillars) | Fixturbo home-5 |
-| Services (6 cards) | Fixturbo |
+| Services (6 cards, each linking to its own page) | Fixturbo |
+| Service pages ×6 (banner, main column with photo/checklist/steps/gallery, sticky details card + all-services list, CTA band) | Fixturbo service-details + Autozen service-details card |
 | Testimonials carousel | Autozen |
 | Packages (6 pricing cards, no CTA) | Fixturbo |
 | Team carousel (photo card, name, role, socials) — commented out until staff photos are available | Fixturbo home-5 |
@@ -30,6 +31,9 @@ Fonts: Manrope (headings), Inter (body) via Google Fonts.
 ```
 index.html                 homepage
 contact.html               contact page (banner, details card, map facade)
+car-wash.html, mobile-car-wash.html, fleet-washing.html,
+office-cleaning.html, carpet-cleaning.html, car-sales.html
+                           service pages (same shell; generated from one script, content in each file)
 privacy-policy.html        legal pages: same shell as contact.html, sticky table of contents,
 terms-of-use.html            no AOS/Slick; content generated from scratch, marked with
 cookie-policy.html           <!-- CONFIRM --> comments where the company must verify facts
@@ -63,7 +67,8 @@ Re-check contrast whenever a brand colour token changes.
 ## Status / to-do
 
 - [ ] **Facility photography.** Hero and About use stock photos; replace with real photographs of the Woodlands facility when available.
-- [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing`.
+- [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing` and on `car-wash.html`.
+- [ ] **Service pages — confirm operational details.** Durations, coverage area, payment methods (cash/mobile money), call-out charging, contract terms and car-sales commission wording on the six service pages are drafted from the service descriptions and should be checked by the business. Photos are stock placeholders pending the facility shoot.
 - [ ] **Team section.** Built but commented out in `index.html`; add real names/roles and square photos (≥ 600 px) to `assets/img/team/`, then uncomment the section and its nav/footer links.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
