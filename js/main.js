@@ -218,10 +218,12 @@
       updateToc();
     }
 
-    // Map facade: the Google Maps embed is only fetched on request
+    // Map facade: the Google Maps embed is only fetched on request, and only once the
+    // visitor has allowed "External content (Google Maps)" in the cookie preferences.
     var loadMap = document.getElementById('loadMap');
     if (loadMap) {
-      loadMap.addEventListener('click', function () {
+      var mapRequested = false;
+      var injectMap = function () {
         var wrap = document.getElementById('mapWrap');
         var iframe = document.createElement('iframe');
         iframe.title = 'Map: Plot 25313, Mosi-oa-Tunya Road, Woodlands, Lusaka';
@@ -229,6 +231,22 @@
         iframe.src = 'https://maps.google.com/maps?q=Mosi-oa-Tunya%20Road%2C%20Woodlands%2C%20Lusaka%2C%20Zambia&t=&z=15&ie=UTF8&iwloc=&output=embed';
         wrap.innerHTML = '';
         wrap.appendChild(iframe);
+      };
+      var mapAllowed = function () { return !window.MOTConsent || window.MOTConsent.allowed('maps'); };
+      loadMap.addEventListener('click', function () {
+        if (mapAllowed()) { injectMap(); return; }
+        mapRequested = true;
+        var hint = document.getElementById('mapConsentHint');
+        if (!hint) {
+          hint = document.createElement('p');
+          hint.id = 'mapConsentHint'; hint.className = 'map-consent'; hint.setAttribute('role', 'status');
+          hint.textContent = 'Allow "External content (Google Maps)" in the preferences to show the map.';
+          loadMap.closest('.map-facade-inner').appendChild(hint);
+        }
+        window.MOTConsent.open(loadMap);
+      });
+      document.addEventListener('motcc:change', function () {
+        if (mapRequested && mapAllowed()) { mapRequested = false; injectMap(); }
       });
     }
   });

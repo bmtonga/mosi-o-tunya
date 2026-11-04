@@ -116,9 +116,18 @@
 
 <p>We reviewed every page and script on this website in preparing this policy. The result is simple:</p>
 <div class="legal-note">
-  <p><strong>This website does not set any cookies of its own</strong>, and it does not use local storage, analytics, advertising or social-media tracking. Browsing the site does not require a cookie banner because nothing that needs your consent is loaded without your action.</p>
+  <p><strong>This website does not set any cookies of its own</strong>, and it does not use analytics, advertising or social-media tracking. The only thing it stores in your browser is your cookie choice itself.</p>
 </div>
-<p>If we introduce analytics or other tools that use cookies in future, we will update this policy and, where the law requires, ask for your consent first.</p>
+<div class="table-wrap">
+<table>
+  <caption class="visually-hidden">Items stored in your browser by this website</caption>
+  <thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Purpose</th><th scope="col">Duration</th><th scope="col">Category</th></tr></thead>
+  <tbody>
+    <tr><td><code>motcc-consent</code></td><td>Browser local storage (not a cookie; never sent to any server)</td><td>Remembers whether you accepted or rejected optional content, so the cookie notice is not shown on every visit</td><td>12 months, after which we ask again</td><td>Strictly necessary</td></tr>
+  </tbody>
+</table>
+</div>
+<p>If we introduce analytics or other tools that use cookies in future, we will add them to this policy and to the cookie preferences, and we will not switch them on without your consent.</p>
 
 <h2 id="third-party">Third-party content</h2>
 
@@ -136,7 +145,7 @@
     </tr>
     <tr>
       <td>Google Maps embed<br><small>(maps.google.com)</small></td>
-      <td>Only on the Contact page, and only after you click <strong>"Show map"</strong></td>
+      <td>Only on the Contact page, only if you have allowed it in the cookie preferences, and only after you click <strong>"Show map"</strong></td>
       <td>Shows an interactive map of our location</td>
       <td>Once loaded, Google may set its own cookies on the google.com domain (for example to remember preferences and for security). These are controlled by Google under its <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">cookie policy</a>.</td>
     </tr>
@@ -148,7 +157,8 @@
 <h2 id="managing">How to manage cookies</h2>
 
 <ul>
-  <li><strong>The map.</strong> The Google Maps embed is never loaded automatically. If you prefer not to connect to Google, simply do not click "Show map"; the address and the "Get directions" link still work.</li>
+  <li><strong>Cookie Settings.</strong> Use the <button type="button" class="cc-link-btn" data-cc-open>Cookie Settings</button> link in the footer of any page to change your choice at any time. Optional content is off until you allow it.</li>
+  <li><strong>The map.</strong> The Google Maps embed is never loaded automatically. It loads only if you have allowed "External content (Google Maps)" and click "Show map"; the address and the "Get directions" link work either way.</li>
   <li><strong>Browser settings.</strong> You can block or delete cookies, including third-party cookies, in your browser's privacy settings. Blocking all cookies will not affect this website, as it does not rely on any.</li>
   <li><strong>Fonts.</strong> If your browser blocks requests to Google, the site falls back to a standard system typeface and remains fully usable.</li>
 </ul>
@@ -232,6 +242,7 @@
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms-of-use.html">Terms of Use</a></li>
             <li><a href="cookie-policy.html" aria-current="page">Cookie Policy</a></li>
+            <li><button type="button" data-cc-open>Cookie Settings</button></li>
           </ul>
         </nav>
       </div>
@@ -244,6 +255,7 @@
   <script src="js/vendor/jquery.min.js"></script>
   <script src="js/vendor/bootstrap.bundle.min.js"></script>
   <!-- Site JS -->
+  <script src="js/cookie-consent.js"></script>
   <script src="js/main.js"></script>
 </body>
 

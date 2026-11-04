@@ -36,7 +36,8 @@ cookie-policy.html           <!-- CONFIRM --> comments where the company must ve
 css/style.css              site styles (own)
 css/vendor/                bootstrap 5.3.3, aos 2.3, slick 1.8, fontawesome 5.15 (local)
 css/webfonts/              Font Awesome webfonts (woff2 + woff only)
-js/main.js                 site scripts (AOS, Slick, header measure, nav state, counter)
+js/main.js                 site scripts (AOS, Slick, header measure, nav state, counter, map facade)
+js/cookie-consent.js       cookie banner + preferences dialog (vanilla JS, localStorage key motcc-consent)
 js/vendor/                 jquery 3.7.1, bootstrap 5.3.3, aos, slick
 assets/brand/logos/        SVG logo set (stacked, compact, horizontal, icon × colour/reverse/black/white/green)
 assets/brand/icons/        square profile icons 64–1024
@@ -73,4 +74,4 @@ Re-check contrast whenever a brand colour token changes.
   - Retention periods (12 months for enquiries; statutory period for financial records).
   - Whether CCTV or vehicle photographs are used at the premises.
   - Whether separate service/fleet contract terms exist to link from the Terms of Use.
-  - Re-audit the Cookie Policy if analytics, a booking form or any embed is added later: it currently states, truthfully, that the site sets no cookies and so needs no consent banner.
+  - Re-audit the Cookie Policy and `js/cookie-consent.js` CATEGORIES if analytics, a booking form or any embed is added later. Today the only optional category is "External content (Google Maps)"; the consent banner stores the choice in localStorage (`motcc-consent`, 12 months) and the map loads only with consent.

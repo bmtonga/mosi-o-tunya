@@ -594,6 +594,8 @@ html { scrollbar-color: var(--green) var(--soft); scrollbar-width: thin; }
 .legal-article th, .legal-article td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .legal-article th { background: var(--sage-tint); color: var(--ink); font-family: var(--font-head); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
 .legal-article tr:last-child td { border-bottom: 0; }
+.legal-article code { font-size: 0.92em; color: var(--green); background: var(--sage-tint); padding: 2px 6px; border-radius: 4px; }
+.legal-article .cc-link-btn { padding: 0; font-family: var(--font-body); font-weight: 400; font-size: inherit; vertical-align: baseline; }
 .legal-note { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--radius-sm); padding: 18px 22px; margin: 24px 0; }
 .legal-note p:last-child { margin-bottom: 0; }
 .legal-contact { background: var(--green-tint); border-radius: var(--radius); padding: 24px 26px; margin-top: 40px; }
@@ -644,6 +646,69 @@ html { scrollbar-color: var(--green) var(--soft); scrollbar-width: thin; }
 .footer-bottom { border-top: 1px solid var(--line-on-green); margin-top: 70px; padding: 22px 0; font-size: 13.5px; color: rgba(255, 255, 255, 0.72); }
 .footer-bottom a { color: rgba(255, 255, 255, 0.72); }
 .footer-bottom a:hover { color: var(--white); }
+
+/* ---------------------------------------------------------------------
+   12b. Cookie consent (banner + preferences dialog; js/cookie-consent.js)
+   ------------------------------------------------------------------- */
+.cc-banner {
+  position: fixed; left: 22px; bottom: 22px; z-index: 1045; width: min(460px, calc(100vw - 44px));
+  background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px 26px 22px; color: var(--ink-2);
+  transform: translateY(24px); opacity: 0; transition: transform .3s var(--ease), opacity .3s ease;
+}
+.cc-banner.is-visible { transform: none; opacity: 1; }
+.cc-banner h2 { font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.cc-banner h2 i { color: var(--gold-dark); font-size: 1rem; }
+.cc-banner p { font-size: 14.5px; line-height: 1.55; margin-bottom: 16px; }
+.cc-banner p a, .cc-dialog p a { text-decoration: underline; text-underline-offset: 3px; }
+.cc-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.cc-actions .btn { padding: 11px 20px; font-size: 14px; }
+.cc-link-btn { background: none; border: 0; padding: 8px 4px; font-family: var(--font-head); font-weight: 700; font-size: 14px; color: var(--green); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.cc-link-btn:hover { color: var(--gold-dark); }
+.cc-link-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+/* Preferences dialog */
+.cc-overlay { position: fixed; inset: 0; z-index: 1050; background: rgba(4, 54, 42, 0.55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; transition: opacity .25s ease; }
+.cc-overlay.is-visible { opacity: 1; }
+.cc-dialog { background: var(--white); border-radius: var(--radius); width: min(560px, 100%); max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); overflow: auto; box-shadow: var(--shadow); border-top: 3px solid var(--gold); }
+.cc-dialog-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 26px 28px 0; }
+.cc-dialog-head h2 { font-size: 1.35rem; margin: 0; }
+.cc-dialog .btn-close { padding: 10px; margin: -6px -8px 0 0; opacity: .7; }
+.cc-dialog .btn-close:focus { outline: 3px solid var(--gold); outline-offset: 2px; box-shadow: none; opacity: 1; }
+.cc-dialog-body { padding: 14px 28px 8px; }
+.cc-dialog-body > p { font-size: 15px; margin-bottom: 18px; }
+.cc-cat { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; padding: 16px 0; border-top: 1px solid var(--line); }
+.cc-cat:last-child { border-bottom: 1px solid var(--line); }
+.cc-cat h3 { font-size: 1rem; margin: 0 0 4px; }
+.cc-cat p { font-size: 14px; color: var(--muted); margin: 0; }
+.cc-cat .cc-always { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); font-weight: 700; white-space: nowrap; padding-top: 4px; }
+.cc-switch { position: relative; flex-shrink: 0; width: 48px; height: 28px; margin-top: 2px; }
+.cc-switch input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.cc-switch span { position: absolute; inset: 0; border-radius: 999px; background: var(--line); transition: background .25s ease; pointer-events: none; }
+.cc-switch span::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--white); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); transition: transform .25s var(--ease); }
+.cc-switch input:checked + span { background: var(--green); }
+.cc-switch input:checked + span::after { transform: translateX(20px); }
+.cc-switch input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 3px; }
+.cc-dialog-foot { display: flex; flex-wrap: wrap; gap: 10px; padding: 18px 28px 26px; }
+.cc-dialog-foot .btn { padding: 11px 20px; font-size: 14px; }
+.cc-dialog-foot .ms-auto-md { margin-left: auto; }
+/* Footer "Cookie Settings" control */
+.footer-legal button { background: none; border: 0; padding: 0; color: rgba(255, 255, 255, 0.72); font-size: 13.5px; font-family: inherit; cursor: pointer; transition: color .25s ease; }
+.footer-legal button:hover { color: var(--white); }
+.footer-legal button:focus-visible { outline: 3px solid #E4BA55; outline-offset: 3px; border-radius: 3px; }
+/* Map facade: inline hint while consent for Google Maps is missing */
+.map-facade .map-consent { font-size: 13.5px; color: var(--gold-dark); margin: 10px 0 0; font-weight: 600; }
+@media (max-width: 767.98px) {
+  .cc-banner { left: 0; right: 0; bottom: 0; width: 100%; border-radius: var(--radius) var(--radius) 0 0; padding: 20px 20px 18px; padding-bottom: max(18px, env(safe-area-inset-bottom)); }
+  .cc-actions .btn { flex: 1 1 calc(50% - 5px); text-align: center; }
+  .cc-actions .cc-link-btn { flex-basis: 100%; text-align: center; }
+  body.cc-open .wa-float { display: none; }
+  .cc-overlay { padding: 0; align-items: flex-end; }
+  .cc-dialog { border-radius: var(--radius) var(--radius) 0 0; max-height: 92vh; max-height: 92dvh; }
+  .cc-dialog-head, .cc-dialog-body, .cc-dialog-foot { padding-left: 20px; padding-right: 20px; }
+  .cc-dialog-foot .btn { flex: 1 1 calc(50% - 5px); }
+  .cc-dialog-foot .ms-auto-md { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .cc-banner, .cc-overlay, .cc-switch span, .cc-switch span::after { transition: none; } }
 
 /* ---------------------------------------------------------------------
    13. Fallbacks & preferences
