@@ -68,7 +68,7 @@ Re-check contrast whenever a brand colour token changes.
 
 - [ ] **Facility photography.** Hero and About use stock photos; replace with real photographs of the Woodlands facility when available.
 - [ ] **Confirm package prices.** Values are indicative placeholders in `#pricing` and on `car-wash.html`.
-- [ ] **Service pages — confirm operational details.** Durations, coverage area, payment methods (cash/mobile money), call-out charging, contract terms and car-sales commission wording on the six service pages are drafted from the service descriptions and should be checked by the business. Photos are stock placeholders pending the facility shoot.
+- [ ] **Service pages — confirm operational details.** Durations, coverage area, payment methods (cash/mobile money), call-out charging, contract terms and car-sales commission wording on the six service pages are drafted from the service descriptions and should be checked by the business. Photos supplied by the client (stock); replace with facility photography when available.
 - [ ] **Team section.** Built but commented out in `index.html`; add real names/roles and square photos (≥ 600 px) to `assets/img/team/`, then uncomment the section and its nav/footer links.
 - [ ] **Replace testimonials** with real customer feedback.
 - [ ] **Booking.** Removed for now (contact is via call/WhatsApp); a booking flow can be added later.
